@@ -1,0 +1,69 @@
+D:\Nam4DH\SachStore\SachApp\SachApp.Service\bin\Debug\SachApp.Service.dll.config
+D:\Nam4DH\SachStore\SachApp\SachApp.Service\bin\Debug\SachApp.Service.dll
+D:\Nam4DH\SachStore\SachApp\SachApp.Service\bin\Debug\SachApp.Service.pdb
+D:\Nam4DH\SachStore\SachApp\SachApp.Service\bin\Debug\EntityFramework.dll
+D:\Nam4DH\SachStore\SachApp\SachApp.Service\bin\Debug\EntityFramework.SqlServer.dll
+D:\Nam4DH\SachStore\SachApp\SachApp.Service\bin\Debug\EntityFramework.xml
+D:\Nam4DH\SachStore\SachApp\SachApp.Service\bin\Debug\EntityFramework.SqlServer.xml
+D:\Nam4DH\SachStore\SachApp\SachApp.Service\obj\Debug\SachApp.Service.dll
+D:\Nam4DH\SachStore\SachApp\SachApp.Service\obj\Debug\SachApp.Service.pdb
+D:\Nam4DH\SachStore\SachApp\SachApp.Service\obj\Debug\SachApp.Service.csprojResolveAssemblyReference.cache
+C:\Users\admin\Downloads\Compressed\SachStore-ddac68adb62a3da55b7f1dfc4535c5315d28ed4d\SachStore-ddac68adb62a3da55b7f1dfc4535c5315d28ed4d\SachApp\SachApp.Service\bin\Debug\SachApp.Service.dll.config
+C:\Users\admin\Downloads\Compressed\SachStore-ddac68adb62a3da55b7f1dfc4535c5315d28ed4d\SachStore-ddac68adb62a3da55b7f1dfc4535c5315d28ed4d\SachApp\SachApp.Service\bin\Debug\SachApp.Service.dll
+C:\Users\admin\Downloads\Compressed\SachStore-ddac68adb62a3da55b7f1dfc4535c5315d28ed4d\SachStore-ddac68adb62a3da55b7f1dfc4535c5315d28ed4d\SachApp\SachApp.Service\bin\Debug\SachApp.Service.pdb
+C:\Users\admin\Downloads\Compressed\SachStore-ddac68adb62a3da55b7f1dfc4535c5315d28ed4d\SachStore-ddac68adb62a3da55b7f1dfc4535c5315d28ed4d\SachApp\SachApp.Service\bin\Debug\EntityFramework.dll
+C:\Users\admin\Downloads\Compressed\SachStore-ddac68adb62a3da55b7f1dfc4535c5315d28ed4d\SachStore-ddac68adb62a3da55b7f1dfc4535c5315d28ed4d\SachApp\SachApp.Service\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\admin\Downloads\Compressed\SachStore-ddac68adb62a3da55b7f1dfc4535c5315d28ed4d\SachStore-ddac68adb62a3da55b7f1dfc4535c5315d28ed4d\SachApp\SachApp.Service\bin\Debug\EntityFramework.xml
+C:\Users\admin\Downloads\Compressed\SachStore-ddac68adb62a3da55b7f1dfc4535c5315d28ed4d\SachStore-ddac68adb62a3da55b7f1dfc4535c5315d28ed4d\SachApp\SachApp.Service\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\admin\Downloads\Compressed\SachStore-ddac68adb62a3da55b7f1dfc4535c5315d28ed4d\SachStore-ddac68adb62a3da55b7f1dfc4535c5315d28ed4d\SachApp\SachApp.Service\obj\Debug\SachApp.Service.csprojResolveAssemblyReference.cache
+C:\Users\admin\Downloads\Compressed\SachStore-ddac68adb62a3da55b7f1dfc4535c5315d28ed4d\SachStore-ddac68adb62a3da55b7f1dfc4535c5315d28ed4d\SachApp\SachApp.Service\obj\Debug\SachApp.Service.dll
+C:\Users\admin\Downloads\Compressed\SachStore-ddac68adb62a3da55b7f1dfc4535c5315d28ed4d\SachStore-ddac68adb62a3da55b7f1dfc4535c5315d28ed4d\SachApp\SachApp.Service\obj\Debug\SachApp.Service.pdb
+D:\Nam4DH\BookStore\SachApp\SachApp.Service\bin\Debug\SachApp.Service.dll.config
+D:\Nam4DH\BookStore\SachApp\SachApp.Service\bin\Debug\SachApp.Service.dll
+D:\Nam4DH\BookStore\SachApp\SachApp.Service\bin\Debug\SachApp.Service.pdb
+D:\Nam4DH\BookStore\SachApp\SachApp.Service\bin\Debug\EntityFramework.dll
+D:\Nam4DH\BookStore\SachApp\SachApp.Service\bin\Debug\EntityFramework.SqlServer.dll
+D:\Nam4DH\BookStore\SachApp\SachApp.Service\bin\Debug\EntityFramework.xml
+D:\Nam4DH\BookStore\SachApp\SachApp.Service\bin\Debug\EntityFramework.SqlServer.xml
+D:\Nam4DH\BookStore\SachApp\SachApp.Service\obj\Debug\SachApp.Service.csprojResolveAssemblyReference.cache
+D:\Nam4DH\BookStore\SachApp\SachApp.Service\obj\Debug\SachApp.Service.dll
+D:\Nam4DH\BookStore\SachApp\SachApp.Service\obj\Debug\SachApp.Service.pdb
+C:\Users\buith\Desktop\New folder - Copy (2)\BookStore\SachApp\SachApp.Service\bin\Debug\SachApp.Service.dll.config
+C:\Users\buith\Desktop\New folder - Copy (2)\BookStore\SachApp\SachApp.Service\bin\Debug\SachApp.Service.dll
+C:\Users\buith\Desktop\New folder - Copy (2)\BookStore\SachApp\SachApp.Service\bin\Debug\SachApp.Service.pdb
+C:\Users\buith\Desktop\New folder - Copy (2)\BookStore\SachApp\SachApp.Service\bin\Debug\EntityFramework.dll
+C:\Users\buith\Desktop\New folder - Copy (2)\BookStore\SachApp\SachApp.Service\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\buith\Desktop\New folder - Copy (2)\BookStore\SachApp\SachApp.Service\bin\Debug\EntityFramework.xml
+C:\Users\buith\Desktop\New folder - Copy (2)\BookStore\SachApp\SachApp.Service\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\buith\Desktop\New folder - Copy (2)\BookStore\SachApp\SachApp.Service\obj\Debug\SachApp.Service.csprojResolveAssemblyReference.cache
+C:\Users\buith\Desktop\New folder - Copy (2)\BookStore\SachApp\SachApp.Service\obj\Debug\SachApp.Service.dll
+C:\Users\buith\Desktop\New folder - Copy (2)\BookStore\SachApp\SachApp.Service\obj\Debug\SachApp.Service.pdb
+C:\Users\buith\Desktop\New folder\BookStore\SachApp\SachApp.Service\bin\Debug\SachApp.Service.dll.config
+C:\Users\buith\Desktop\New folder\BookStore\SachApp\SachApp.Service\bin\Debug\SachApp.Service.dll
+C:\Users\buith\Desktop\New folder\BookStore\SachApp\SachApp.Service\bin\Debug\SachApp.Service.pdb
+C:\Users\buith\Desktop\New folder\BookStore\SachApp\SachApp.Service\bin\Debug\EntityFramework.dll
+C:\Users\buith\Desktop\New folder\BookStore\SachApp\SachApp.Service\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\buith\Desktop\New folder\BookStore\SachApp\SachApp.Service\bin\Debug\EntityFramework.xml
+C:\Users\buith\Desktop\New folder\BookStore\SachApp\SachApp.Service\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\buith\Desktop\New folder\BookStore\SachApp\SachApp.Service\obj\Debug\SachApp.Service.dll
+C:\Users\buith\Desktop\New folder\BookStore\SachApp\SachApp.Service\obj\Debug\SachApp.Service.pdb
+C:\Users\buith\Desktop\BookStore\SachApp\SachApp.Service\bin\Debug\SachApp.Service.dll.config
+C:\Users\buith\Desktop\BookStore\SachApp\SachApp.Service\bin\Debug\SachApp.Service.dll
+C:\Users\buith\Desktop\BookStore\SachApp\SachApp.Service\bin\Debug\SachApp.Service.pdb
+C:\Users\buith\Desktop\BookStore\SachApp\SachApp.Service\bin\Debug\EntityFramework.dll
+C:\Users\buith\Desktop\BookStore\SachApp\SachApp.Service\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\buith\Desktop\BookStore\SachApp\SachApp.Service\bin\Debug\EntityFramework.xml
+C:\Users\buith\Desktop\BookStore\SachApp\SachApp.Service\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\buith\Desktop\BookStore\SachApp\SachApp.Service\obj\Debug\SachApp.Service.csprojResolveAssemblyReference.cache
+C:\Users\buith\Desktop\BookStore\SachApp\SachApp.Service\obj\Debug\SachApp.Service.dll
+C:\Users\buith\Desktop\BookStore\SachApp\SachApp.Service\obj\Debug\SachApp.Service.pdb
+C:\Users\buith\Desktop\SachApp\SachApp.Service\bin\Debug\SachApp.Service.dll.config
+C:\Users\buith\Desktop\SachApp\SachApp.Service\bin\Debug\SachApp.Service.dll
+C:\Users\buith\Desktop\SachApp\SachApp.Service\bin\Debug\SachApp.Service.pdb
+C:\Users\buith\Desktop\SachApp\SachApp.Service\bin\Debug\EntityFramework.dll
+C:\Users\buith\Desktop\SachApp\SachApp.Service\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\buith\Desktop\SachApp\SachApp.Service\bin\Debug\EntityFramework.xml
+C:\Users\buith\Desktop\SachApp\SachApp.Service\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\buith\Desktop\SachApp\SachApp.Service\obj\Debug\SachApp.Service.csprojResolveAssemblyReference.cache
+C:\Users\buith\Desktop\SachApp\SachApp.Service\obj\Debug\SachApp.Service.dll
+C:\Users\buith\Desktop\SachApp\SachApp.Service\obj\Debug\SachApp.Service.pdb

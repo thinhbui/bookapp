@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SachApp", "SachApp\SachApp.csproj", "{5CBBFBFC-93F8-456D-9B2F-9C06CA7A7433}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SachApp.Service", "SachApp.Service\SachApp.Service.csproj", "{46DA0DF7-6E74-4696-BF3A-D02205BCE864}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5CBBFBFC-93F8-456D-9B2F-9C06CA7A7433}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5CBBFBFC-93F8-456D-9B2F-9C06CA7A7433}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5CBBFBFC-93F8-456D-9B2F-9C06CA7A7433}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5CBBFBFC-93F8-456D-9B2F-9C06CA7A7433}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46DA0DF7-6E74-4696-BF3A-D02205BCE864}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46DA0DF7-6E74-4696-BF3A-D02205BCE864}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46DA0DF7-6E74-4696-BF3A-D02205BCE864}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46DA0DF7-6E74-4696-BF3A-D02205BCE864}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
