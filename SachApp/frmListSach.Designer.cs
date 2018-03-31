@@ -98,6 +98,7 @@
             this.gridControl1.TabIndex = 6;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dgvListSach});
+            this.gridControl1.Click += new System.EventHandler(this.gridControl1_Click);
             // 
             // dgvListSach
             // 
@@ -114,11 +115,8 @@
             this.gridColumn7,
             this.gridColumn9});
             this.dgvListSach.GridControl = this.gridControl1;
-            this.dgvListSach.GroupCount = 1;
             this.dgvListSach.Name = "dgvListSach";
             this.dgvListSach.OptionsBehavior.Editable = false;
-            this.dgvListSach.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
-            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gridColumn3, DevExpress.Data.ColumnSortOrder.Ascending)});
             // 
             // gridColumn1
             // 
@@ -158,7 +156,7 @@
             this.gridColumn4.FieldName = "NAMXUATBAN";
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 4;
+            this.gridColumn4.VisibleIndex = 5;
             // 
             // gridColumn3
             // 
@@ -166,7 +164,7 @@
             this.gridColumn3.FieldName = "TENTHELOAI";
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 2;
+            this.gridColumn3.VisibleIndex = 4;
             // 
             // gridColumn8
             // 
@@ -174,7 +172,7 @@
             this.gridColumn8.FieldName = "TENNXB";
             this.gridColumn8.Name = "gridColumn8";
             this.gridColumn8.Visible = true;
-            this.gridColumn8.VisibleIndex = 8;
+            this.gridColumn8.VisibleIndex = 9;
             // 
             // gridColumn5
             // 
@@ -182,7 +180,7 @@
             this.gridColumn5.FieldName = "GIAMUA";
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.Visible = true;
-            this.gridColumn5.VisibleIndex = 5;
+            this.gridColumn5.VisibleIndex = 6;
             // 
             // gridColumn6
             // 
@@ -190,7 +188,7 @@
             this.gridColumn6.FieldName = "GIABAN";
             this.gridColumn6.Name = "gridColumn6";
             this.gridColumn6.Visible = true;
-            this.gridColumn6.VisibleIndex = 6;
+            this.gridColumn6.VisibleIndex = 7;
             // 
             // gridColumn7
             // 
@@ -198,7 +196,7 @@
             this.gridColumn7.FieldName = "SOLUONGKHO";
             this.gridColumn7.Name = "gridColumn7";
             this.gridColumn7.Visible = true;
-            this.gridColumn7.VisibleIndex = 7;
+            this.gridColumn7.VisibleIndex = 8;
             // 
             // gridColumn9
             // 
@@ -206,7 +204,7 @@
             this.gridColumn9.FieldName = "MOTA";
             this.gridColumn9.Name = "gridColumn9";
             this.gridColumn9.Visible = true;
-            this.gridColumn9.VisibleIndex = 9;
+            this.gridColumn9.VisibleIndex = 10;
             // 
             // btnXoa
             // 

@@ -8,7 +8,7 @@ namespace SachApp.Service.Models
 {
     public class HoaDon
     {
-        public int MAHD { get; set; }
+        public string MAHD { get; set; }
 
         public int? MANV { get; set; }
 

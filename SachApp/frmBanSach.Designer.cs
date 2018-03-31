@@ -438,7 +438,11 @@
             this.luKhachHang.Name = "luKhachHang";
             this.luKhachHang.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.luKhachHang.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("TENKH", "Name")});
             this.luKhachHang.Properties.NullText = "";
+            this.luKhachHang.Properties.SearchMode = DevExpress.XtraEditors.Controls.SearchMode.AutoComplete;
+            this.luKhachHang.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             this.luKhachHang.Size = new System.Drawing.Size(336, 20);
             this.luKhachHang.StyleController = this.layoutControl1;
             this.luKhachHang.TabIndex = 9;

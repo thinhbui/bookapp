@@ -12,9 +12,9 @@ namespace SachApp.Service.BLL
     public class KhachHangBus
     {
         KhachHangDao dao = new KhachHangDao();
-        public DataTable GetKH()
+        public DataTable GetData()
         {
-            return dao.GetKH();
+            return dao.GetData();
         }
         public int Insert(KhachHang obj)
         {

@@ -11,10 +11,10 @@ namespace SachApp.Service.Dao
 {
     public class KhachHangDao : dbContext
     {
-        public DataTable GetKH()
-        {
-            return base.GetData("KHACHHANG_GETALL", null);
-        }
+        //public DataTable GetKH()
+        //{
+        //    return base.GetData("KHACHHANG_GETALL", null);
+        //}
 
         public int Insert(KhachHang obj)
         {

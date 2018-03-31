@@ -61,7 +61,7 @@ namespace SachApp.Service.Models
                 cmd.Parameters.AddRange(para);
             }
             conn.Open();
-            int row = cmd.ExecuteNonQuery();
+            int row = cmd.ExecuteNonQuery(); 
             conn.Close();
             return row;
             

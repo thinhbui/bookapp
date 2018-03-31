@@ -44,7 +44,7 @@ namespace SachApp
 
             khBus.Insert(obj);
 
-            DataTable dt = khBus.GetKH();
+            DataTable dt = khBus.GetData();
             getData(dt);
 
             XtraMessageBox.Show("Thêm thành công");

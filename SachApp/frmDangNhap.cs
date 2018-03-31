@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using SachApp.Service.BLL;
 using SachApp.Service.Models;
+using SachApp.Service.Dao;
 
 namespace SachApp
 {
@@ -21,14 +22,16 @@ namespace SachApp
         }
 
         NhanVienBus nvBus = new NhanVienBus();
+        NhanVienDao nvDao = new NhanVienDao();
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
             NhanVien obj = new NhanVien();
-            obj = nvBus.GetUser(txtUserName.Text, txtPassword.Text);
+            //obj = nvBus.GetUser(txtUserName.Text, txtPassword.Text);
+            obj = nvDao.GetDataByName(txtUserName.Text, txtPassword.Text);
             if (obj != null)
             {
                 frmMain frm = new frmMain();
-                frm.nvObj = obj;
+              //  frm.nvObj = obj;
                 frm.Show();
                 Hide();
             }
@@ -44,6 +47,11 @@ namespace SachApp
         private void btnThoat_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void frmDangNhap_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

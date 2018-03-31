@@ -12,7 +12,7 @@ namespace SachApp.Service.BLL
     public class ChiTietPhieuNhapBus
     {
         ChiTietPhieuNhapDao dao = new ChiTietPhieuNhapDao();
-        public DataTable GetData(int maPN)
+        public DataTable GetData(string maPN)
         {
             return dao.GetData(maPN);
         }
@@ -30,7 +30,7 @@ namespace SachApp.Service.BLL
         {
             return dao.Update(obj);
         }
-        public int Delete(int maPN,int maSach)
+        public int Delete(string maPN,int maSach)
         {
             return dao.Delete(maPN, maSach);
         }

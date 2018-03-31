@@ -99,6 +99,8 @@ namespace SachApp
 
         private void frmThongKePhieuNhap_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'cuaHangSachDataSet.NhanVien' table. You can move, or remove it, as needed.
+            this.nhanVienTableAdapter.Fill(this.cuaHangSachDataSet.NhanVien);
             // TODO: This line of code loads data into the 'nhanVienDataSet.NhanVien' table. You can move, or remove it, as needed.
             //this.nhanVienTableAdapter.Fill(this.nhanVienDataSet.NhanVien);
             //showPN();
@@ -110,11 +112,11 @@ namespace SachApp
 
         }
 
-      
+
         private void gridControl1_DoubleClick(object sender, EventArgs e)
         {
             DataRow row = bus.GetData().Rows[gridView1.FocusedRowHandle];
-            frmChiTietPhieuNhap frm = new frmChiTietPhieuNhap(int.Parse(row["MAPN"].ToString()));
+            frmChiTietPhieuNhap frm = new frmChiTietPhieuNhap(row["MAPN"].ToString());
             frm.Show();
         }
 

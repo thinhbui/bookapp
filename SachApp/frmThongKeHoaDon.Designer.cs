@@ -48,7 +48,9 @@
             this.lookUpEdit2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.cuaHangSachDataSet = new SachApp.CuaHangSachDataSet();
             this.nhanVienBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.nhanVienTableAdapter = new SachApp.CuaHangSachDataSetTableAdapters.NhanVienTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lkNhanvien.Properties)).BeginInit();
@@ -66,6 +68,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cuaHangSachDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nhanVienBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -308,13 +311,17 @@
             // 
             // cuaHangSachDataSet
             // 
+            this.cuaHangSachDataSet.DataSetName = "CuaHangSachDataSet";
+            this.cuaHangSachDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // nhanVienBindingSource
             // 
             this.nhanVienBindingSource.DataMember = "NhanVien";
+            this.nhanVienBindingSource.DataSource = this.cuaHangSachDataSet;
             // 
             // nhanVienTableAdapter
             // 
+            this.nhanVienTableAdapter.ClearBeforeFill = true;
             // 
             // frmThongKeHoaDon
             // 
@@ -342,6 +349,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cuaHangSachDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nhanVienBindingSource)).EndInit();
             this.ResumeLayout(false);
 
@@ -369,6 +377,8 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private DevExpress.XtraEditors.DateEdit deFrom;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
+        private CuaHangSachDataSet cuaHangSachDataSet;
         private System.Windows.Forms.BindingSource nhanVienBindingSource;
+        private CuaHangSachDataSetTableAdapters.NhanVienTableAdapter nhanVienTableAdapter;
     }
 }

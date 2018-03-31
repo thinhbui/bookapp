@@ -28,10 +28,10 @@ namespace SachApp
         TheLoaiBus tlBus = new TheLoaiBus();
         NhaXuatBanBus nxbBus = new NhaXuatBanBus();
         TacGiaBus tgBus = new TacGiaBus();
-        ChiTietPhieuNhapBus ctpnBus = new ChiTietPhieuNhapBus();
+    //    ChiTietPhieuNhapBus ctpnBus = new ChiTietPhieuNhapBus();
 
 
-        public int maPN;
+        public string maPN;
         public int maSach;
 
         public delegate void loadDataChiTiet(string tenSach);
@@ -96,13 +96,13 @@ namespace SachApp
                 //get MaSach
                 obj = sachBus.GetNew();
                 //add chitietPhieuNhap
-                ChiTietPhieuNhap ctpnObj = new ChiTietPhieuNhap();
-                ctpnObj.MAPN = maPN;
-                ctpnObj.MASACH = obj.MASACH;
-                ctpnObj.SOLUONG = obj.SOLUONGKHO;
-                ctpnObj.DONGIA = obj.GIAMUA;
-                ctpnObj.THANHTIEN = obj.GIAMUA * obj.SOLUONGKHO;
-                ctpnBus.Insert(ctpnObj);
+                //ChiTietPhieuNhap ctpnObj = new ChiTietPhieuNhap();
+                //ctpnObj.MAPN = maPN;
+                //ctpnObj.MASACH = obj.MASACH;
+                //ctpnObj.SOLUONG = obj.SOLUONGKHO;
+                //ctpnObj.DONGIA = obj.GIAMUA;
+                //ctpnObj.THANHTIEN = obj.GIAMUA * obj.SOLUONGKHO;
+                //ctpnBus.Insert(ctpnObj);
 
                 //Get Data
                 getData(obj.TENSACH);
@@ -121,7 +121,7 @@ namespace SachApp
                 ctpnObj.SOLUONG = obj.SOLUONGKHO;
                 ctpnObj.DONGIA = obj.GIAMUA;
                 ctpnObj.THANHTIEN = obj.GIAMUA * obj.SOLUONGKHO;
-                ctpnBus.Update(ctpnObj);
+                //ctpnBus.Update(ctpnObj);
 
                 getData(obj.TENSACH);
 

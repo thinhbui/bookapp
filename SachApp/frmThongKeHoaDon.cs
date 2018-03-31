@@ -29,6 +29,8 @@ namespace SachApp
         string time2;
         private void frmThongKe_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'cuaHangSachDataSet.NhanVien' table. You can move, or remove it, as needed.
+            this.nhanVienTableAdapter.Fill(this.cuaHangSachDataSet.NhanVien);
             showHD();
         }
         void showHD()
@@ -98,7 +100,7 @@ namespace SachApp
         private void gridControl1_DoubleClick(object sender, EventArgs e)
         {
             DataRow row = bus.GetData().Rows[gridView1.FocusedRowHandle];
-            frmChiTietHoaDon frm = new frmChiTietHoaDon(int.Parse(row["MAHD"].ToString()));
+            frmChiTietHoaDon frm = new frmChiTietHoaDon(row["MAHD"].ToString());
             frm.Show();
         }
 

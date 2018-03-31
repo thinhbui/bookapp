@@ -12,6 +12,7 @@ using SachApp.Service.Dao;
 using SachApp.Service.Models;
 using SachApp.Service.BLL;
 using DevExpress.XtraGrid.Columns;
+using System.Globalization;
 
 namespace SachApp
 {
@@ -71,6 +72,9 @@ namespace SachApp
 
         private void frmBanSach_Load(object sender, EventArgs e)
         {
+            dtKH = khBus.GetData();
+            LoadKhachHang(dtKH);
+       
             txtTenNhanVien.Text = nvObj.TENNV;
             KhoaDieuKhien();
 
@@ -86,7 +90,7 @@ namespace SachApp
             luKhachHang.Properties.DataSource = dt;
             luKhachHang.Properties.ValueMember = "MAKH";
             luKhachHang.Properties.DisplayMember = "TENKH";
-            luKhachHang.ItemIndex = dt.Rows.Count - 1;
+            luKhachHang.ItemIndex = 0;
         }
 
         private void LoadHoaDon()
@@ -103,7 +107,7 @@ namespace SachApp
         {
             frmAddKhachHang frm = new frmAddKhachHang();
             frm.ShowInTaskbar = false;
-            frm.getData = new frmAddKhachHang.getDataSoucre(LoadKhachHang);
+            //frm.getData = new frmAddKhachHang.getDataSoucre(LoadKhachHang);
             frm.ShowDialog();
         }
 
@@ -111,11 +115,8 @@ namespace SachApp
         {
             MoKhoaDieuKhien();
             dENgayLap.Text = DateTime.Now.ToString();
-
-            dtKH = khBus.GetKH();
-            LoadKhachHang(dtKH);
-            luKhachHang.ItemIndex = -1;
-
+            hdObj = new HoaDon();
+            hdObj.MAHD = DateTime.Now.ToString("yyyyMMddhhmmss");
             hdObj.NGAYLAP = DateTime.Parse(dENgayLap.Text.ToString());
             hdObj.MANV = nvObj.MANV;
             hdObj.MAKH = int.Parse(luKhachHang.EditValue.ToString());
@@ -179,7 +180,7 @@ namespace SachApp
 
         private void dgvListHoaDon_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
-            if(gridListHoaDon.DataSource != null)
+            if (gridListHoaDon.DataSource != null)
             {
                 lbTenSach.Text = dgvListHoaDon.GetFocusedDataRow()["TENSACH"].ToString();
                 lbDonGia.Text = dgvListHoaDon.GetFocusedDataRow()["GIASACH"].ToString();
@@ -221,8 +222,13 @@ namespace SachApp
 
         private void luKhachHang_EditValueChanged(object sender, EventArgs e)
         {
-            hdObj.MAKH = int.Parse(luKhachHang.EditValue.ToString());
-            hdBus.UpdateKH(hdObj);
+            hdObj = hdBus.GetNewHoaDon();
+            if (hdObj != null)
+            {
+                hdObj.MAKH = int.Parse(luKhachHang.EditValue.ToString());
+                hdBus.UpdateKH(hdObj);
+            }
+            
         }
 
         private void gridListHoaDon_Click(object sender, EventArgs e)

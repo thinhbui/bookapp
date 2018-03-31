@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraBars;
 using SachApp.Service.Models;
+using SachApp.Service.BLL;
 
 namespace SachApp
 {
@@ -17,9 +18,10 @@ namespace SachApp
         public frmMain()
         {
             InitializeComponent();
+            nvObj = new NhanVienBus().GetUser("admin", "admin");
         }
 
-        public NhanVien nvObj;
+        private NhanVien nvObj;
 
 
 

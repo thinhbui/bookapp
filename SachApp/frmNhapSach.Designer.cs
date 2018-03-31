@@ -32,7 +32,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNhapSach));
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.luNPP = new DevExpress.XtraEditors.LookUpEdit();
-            this.cuaHangSachDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridChiTietPhieuNhap = new DevExpress.XtraGrid.GridControl();
             this.dgvPhieuNhap = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colMaSach = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -73,7 +72,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.luNPP.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cuaHangSachDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridChiTietPhieuNhap)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPhieuNhap)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTenNv.Properties)).BeginInit();
@@ -516,7 +514,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.luNPP.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cuaHangSachDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridChiTietPhieuNhap)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPhieuNhap)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTenNv.Properties)).EndInit();
@@ -585,7 +582,6 @@
         private DevExpress.XtraLayout.SimpleLabelItem txtTongTien;
         private DevExpress.XtraLayout.SimpleLabelItem txtTenSach;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
-        private System.Windows.Forms.BindingSource cuaHangSachDataSetBindingSource;
         private CuaHangSachDataSet cuaHangSachDataSet;
         private System.Windows.Forms.BindingSource nhaPhanPhoiBindingSource;
         private CuaHangSachDataSetTableAdapters.NhaPhanPhoiTableAdapter nhaPhanPhoiTableAdapter;

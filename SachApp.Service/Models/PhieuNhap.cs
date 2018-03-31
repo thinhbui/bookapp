@@ -8,7 +8,7 @@ namespace SachApp.Service.Models
 {
     public class PhieuNhap
     {
-        public int MAPN { get; set; }
+        public string MAPN { get; set; }
 
         public int? MANV { get; set; }
 

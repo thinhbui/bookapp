@@ -19,7 +19,7 @@ namespace SachApp.Service.BLL
             DataTable dt = dao.GetNew();
             if (dt.Rows.Count > 0)
             {
-                obj.MAPN = int.Parse(dt.Rows[0]["MAPN"].ToString());
+                obj.MAPN = dt.Rows[0]["MAPN"].ToString();
                 obj.MANV = int.Parse(dt.Rows[0]["MANV"].ToString());
                 obj.MANPP = int.Parse(dt.Rows[0]["MANPP"].ToString());
                 obj.NGAYLAP = DateTime.Parse(dt.Rows[0]["NGAYLAP"].ToString());

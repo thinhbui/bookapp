@@ -37,6 +37,7 @@ namespace SachApp.Service.Dao
         {
             SqlParameter[] para =
             {
+                new SqlParameter("MAHD",obj.MAHD),
                 new SqlParameter("MANV",obj.MANV),
                 new SqlParameter("NGAYLAP",obj.NGAYLAP),
                 new SqlParameter("MAKH",obj.MAKH),

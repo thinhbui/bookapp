@@ -15,13 +15,13 @@ namespace SachApp
 {
     public partial class frmChiTietPhieuNhap : DevExpress.XtraEditors.XtraForm
     {
-        public frmChiTietPhieuNhap(int id)
+        public frmChiTietPhieuNhap(string id)
         {
             InitializeComponent();
             this.id = id;
         }
 
-        int id;
+        string id;
         ChiTietPhieuNhapBus bus = new ChiTietPhieuNhapBus();
         private void frmChiTietPhieuNhap_Load(object sender, EventArgs e)
         {

@@ -56,7 +56,7 @@ namespace SachApp.Service.Dao
             return base.ExecuteSQL("CHITIETHOADON_UPDATE", para);
         }
 
-        public int Delete(int maHD, int maSach)
+        public int Delete(string maHD, int maSach)
         {
             SqlParameter[] para =
                {

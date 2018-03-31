@@ -138,7 +138,7 @@ namespace SachApp
 
         private void bangHD_DoubleClick(object sender, EventArgs e)
         {
-            int id = int.Parse(gridView2.GetRowCellValue(gridView2.FocusedRowHandle, gridView2.Columns[0]).ToString());
+            string id = gridView2.GetRowCellValue(gridView2.FocusedRowHandle, gridView2.Columns[0]).ToString();
             frmChiTietHoaDon frm = new frmChiTietHoaDon(id);
             frm.Show();
         }

@@ -74,6 +74,8 @@ namespace SachApp
         {
             // TODO: This line of code loads data into the 'cuaHangSachDataSet.NhaPhanPhoi' table. You can move, or remove it, as needed.
             this.nhaPhanPhoiTableAdapter.Fill(this.cuaHangSachDataSet.NhaPhanPhoi);
+            // TODO: This line of code loads data into the 'cuaHangSachDataSet.NhaPhanPhoi' table. You can move, or remove it, as needed.
+            this.nhaPhanPhoiTableAdapter.Fill(this.cuaHangSachDataSet.NhaPhanPhoi);
             txtTenNv.Text = nvObj.TENNV;
             KhoaDieuKhien();
             //dEditNgayLap.Text = DateTime.Now.ToString();
