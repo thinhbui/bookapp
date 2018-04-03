@@ -64,6 +64,7 @@ namespace SachApp
             btnSua.Enabled = true;
             btnLuu.Enabled = true;
             btnXoa.Enabled = true;
+           
         }
         void XoaText()
         {
@@ -74,13 +75,10 @@ namespace SachApp
         {
             dtKH = khBus.GetData();
             LoadKhachHang(dtKH);
-       
+
             txtTenNhanVien.Text = nvObj.TENNV;
             KhoaDieuKhien();
-
-            DataTable dt = sBus.GetData();
-            gridListSach.DataSource = dt;
-            dgvListSach.ExpandAllGroups();
+            LoadSach();
 
 
         }
@@ -90,9 +88,15 @@ namespace SachApp
             luKhachHang.Properties.DataSource = dt;
             luKhachHang.Properties.ValueMember = "MAKH";
             luKhachHang.Properties.DisplayMember = "TENKH";
-            luKhachHang.ItemIndex = 0;
+            luKhachHang.ItemIndex = dt.Columns.Count-1;
         }
+        private void LoadSach()
+        {
+            DataTable dt = sBus.GetData();
+            gridListSach.DataSource = dt;
+            dgvListSach.ExpandAllGroups();
 
+        }
         private void LoadHoaDon()
         {
             dtHD = cthdBus.GetData(hdObj.MAHD);
@@ -107,7 +111,7 @@ namespace SachApp
         {
             frmAddKhachHang frm = new frmAddKhachHang();
             frm.ShowInTaskbar = false;
-            //frm.getData = new frmAddKhachHang.getDataSoucre(LoadKhachHang);
+            frm.getData = new frmAddKhachHang.getDataSoucre(LoadKhachHang);
             frm.ShowDialog();
         }
 
@@ -161,8 +165,13 @@ namespace SachApp
 
         private void dgvListSach_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
-            lbTenSach.Text = dgvListSach.GetFocusedDataRow()["TENSACH"].ToString();
-            lbDonGia.Text = dgvListSach.GetFocusedDataRow()["GIABAN"].ToString();
+            try
+            {
+                lbTenSach.Text = dgvListSach.GetFocusedDataRow()["TENSACH"].ToString();
+                lbDonGia.Text = dgvListSach.GetFocusedDataRow()["GIABAN"].ToString();
+            }
+            catch { }
+
         }
 
         private void btnThem_Click(object sender, EventArgs e)
@@ -176,6 +185,7 @@ namespace SachApp
 
             cthdBus.Insert(cthdObj);
             LoadHoaDon();
+            
         }
 
         private void dgvListHoaDon_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
@@ -205,11 +215,12 @@ namespace SachApp
         private void btnXoa_Click(object sender, EventArgs e)
         {
             int maSach = int.Parse(dgvListHoaDon.GetFocusedDataRow()["MASACH"].ToString());
+            int soLuong = int.Parse(dgvListHoaDon.GetFocusedDataRow()["SOLUONG"].ToString());
             if (XtraMessageBox.Show("Bạn có muốn xóa không?", "Thông Báo!", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 try
                 {
-                    cthdBus.Delete(hdObj.MAHD, maSach);
+                    cthdBus.Delete(hdObj.MAHD, maSach, soLuong);
                     XtraMessageBox.Show("Đã xóa thành công");
                     //XoaText();
                 }
@@ -228,7 +239,7 @@ namespace SachApp
                 hdObj.MAKH = int.Parse(luKhachHang.EditValue.ToString());
                 hdBus.UpdateKH(hdObj);
             }
-            
+
         }
 
         private void gridListHoaDon_Click(object sender, EventArgs e)

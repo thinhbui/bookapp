@@ -24,10 +24,9 @@ namespace SachApp
         KhachHangBus khBus = new KhachHangBus();
 
         public delegate void getDataSoucre(DataTable dt);
-
         public getDataSoucre getData;
 
-
+     
 
 
         private void frmAddKhachHang_Load(object sender, EventArgs e)

@@ -332,12 +332,13 @@
             this.colSoLuong,
             this.colMota});
             this.dgvListSach.GridControl = this.gridListSach;
-            this.dgvListSach.GroupCount = 2;
+            this.dgvListSach.GroupCount = 1;
             this.dgvListSach.Name = "dgvListSach";
             this.dgvListSach.OptionsBehavior.Editable = false;
+            this.dgvListSach.OptionsFind.SearchInPreview = true;
+            this.dgvListSach.OptionsView.ShowAutoFilterRow = true;
             this.dgvListSach.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
-            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colTheLoai, DevExpress.Data.ColumnSortOrder.Ascending),
-            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colTacGia, DevExpress.Data.ColumnSortOrder.Ascending)});
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colTheLoai, DevExpress.Data.ColumnSortOrder.Ascending)});
             this.dgvListSach.RowCellClick += new DevExpress.XtraGrid.Views.Grid.RowCellClickEventHandler(this.dgvListSach_RowCellClick);
             this.dgvListSach.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.dgvListSach_FocusedRowChanged);
             // 
@@ -371,7 +372,7 @@
             this.colTacGia.FieldName = "TENTG";
             this.colTacGia.Name = "colTacGia";
             this.colTacGia.Visible = true;
-            this.colTacGia.VisibleIndex = 3;
+            this.colTacGia.VisibleIndex = 7;
             // 
             // colNamXuatBan
             // 
@@ -419,7 +420,7 @@
             this.colMota.FieldName = "MOTA";
             this.colMota.Name = "colMota";
             this.colMota.Visible = true;
-            this.colMota.VisibleIndex = 7;
+            this.colMota.VisibleIndex = 8;
             // 
             // btnAddKhachHang
             // 

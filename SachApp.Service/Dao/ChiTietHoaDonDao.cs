@@ -11,7 +11,7 @@ namespace SachApp.Service.Dao
 {
     public class ChiTietHoaDonDao : dbContext
     {
-        public DataTable GetData(int maHD)
+        public DataTable GetData(string maHD)
         {
             SqlParameter[] para =
            {
@@ -56,12 +56,13 @@ namespace SachApp.Service.Dao
             return base.ExecuteSQL("CHITIETHOADON_UPDATE", para);
         }
 
-        public int Delete(string maHD, int maSach)
+        public int Delete(string maHD, int maSach, int soLuong)
         {
             SqlParameter[] para =
                {
                 new SqlParameter("MAHD", maHD),
-                new SqlParameter("MASACH", maSach)
+                new SqlParameter("MASACH", maSach),
+                new SqlParameter("SOLUONG", soLuong),
                 };
             return base.ExecuteSQL("CHITIETHOADON_DELETE", para);
         }

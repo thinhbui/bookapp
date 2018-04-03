@@ -30,9 +30,9 @@ namespace SachApp.Service.BLL
         {
             return dao.Update(obj);
         }
-        public int Delete(string maHD, int maSach)
+        public int Delete(string maHD, int maSach, int soLuong)
         {
-            return dao.Delete(maHD, maSach);
+            return dao.Delete(maHD, maSach, soLuong);
         }
     }
 }

@@ -26,8 +26,8 @@ namespace SachApp
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
             NhanVien obj = new NhanVien();
-            //obj = nvBus.GetUser(txtUserName.Text, txtPassword.Text);
-            obj = nvDao.GetDataByName(txtUserName.Text, txtPassword.Text);
+            obj = nvBus.GetUser(txtUserName.Text, txtPassword.Text);
+            //obj = nvDao.GetDataByName(txtUserName.Text, txtPassword.Text);
             if (obj != null)
             {
                 frmMain frm = new frmMain();
