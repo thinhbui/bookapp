@@ -160,5 +160,19 @@ namespace SachApp
                 fr.Show();
             }
         }
+
+        private void barButtonItem3_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form frm = CheckActiveForm(typeof(frmThongKeHoaDon));
+            if (frm != null)
+                frm.Activate();
+            else
+            {
+                frmThongKeHoaDon fr = new frmThongKeHoaDon();
+                //fr.nvObj = nvObj;
+                fr.MdiParent = this;
+                fr.Show();
+            }
+        }
     }
 }
