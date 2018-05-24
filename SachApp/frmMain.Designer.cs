@@ -36,14 +36,16 @@
             this.btnSach = new DevExpress.XtraBars.BarButtonItem();
             this.btnTheLoai = new DevExpress.XtraBars.BarButtonItem();
             this.btnNXB = new DevExpress.XtraBars.BarButtonItem();
-            this.btnTacGia = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
             this.skinRibbonGalleryBarItem1 = new DevExpress.XtraBars.SkinRibbonGalleryBarItem();
-            this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
+            this.barChangePassword = new DevExpress.XtraBars.BarButtonItem();
+            this.btnLogout = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
+            this.popupMenu1 = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.btnNPP = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -55,7 +57,9 @@
             this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
+            this.btnTacGia = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -69,16 +73,17 @@
             this.btnSach,
             this.btnTheLoai,
             this.btnNXB,
-            this.btnTacGia,
             this.barButtonItem1,
             this.barButtonItem2,
             this.barButtonItem3,
             this.barButtonItem4,
             this.skinRibbonGalleryBarItem1,
-            this.barButtonItem5,
-            this.barButtonItem6});
+            this.barChangePassword,
+            this.btnLogout,
+            this.barButtonItem7,
+            this.btnNPP});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 14;
+            this.ribbon.MaxItemId = 16;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -133,15 +138,6 @@
             this.btnNXB.Name = "btnNXB";
             this.btnNXB.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnNXB_ItemClick);
             // 
-            // btnTacGia
-            // 
-            this.btnTacGia.Caption = "Tác giả";
-            this.btnTacGia.Glyph = ((System.Drawing.Image)(resources.GetObject("btnTacGia.Glyph")));
-            this.btnTacGia.Id = 6;
-            this.btnTacGia.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnTacGia.LargeGlyph")));
-            this.btnTacGia.Name = "btnTacGia";
-            this.btnTacGia.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnTacGia_ItemClick);
-            // 
             // barButtonItem1
             // 
             this.barButtonItem1.Caption = "Khách hàng";
@@ -176,6 +172,7 @@
             this.barButtonItem4.Id = 10;
             this.barButtonItem4.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.LargeGlyph")));
             this.barButtonItem4.Name = "barButtonItem4";
+            this.barButtonItem4.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem4_ItemClick);
             // 
             // skinRibbonGalleryBarItem1
             // 
@@ -183,21 +180,46 @@
             this.skinRibbonGalleryBarItem1.Id = 11;
             this.skinRibbonGalleryBarItem1.Name = "skinRibbonGalleryBarItem1";
             // 
-            // barButtonItem5
+            // barChangePassword
             // 
-            this.barButtonItem5.Caption = "Đổi mật khẩu";
-            this.barButtonItem5.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem5.Glyph")));
-            this.barButtonItem5.Id = 12;
-            this.barButtonItem5.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem5.LargeGlyph")));
-            this.barButtonItem5.Name = "barButtonItem5";
+            this.barChangePassword.Caption = "Đổi mật khẩu";
+            this.barChangePassword.Glyph = ((System.Drawing.Image)(resources.GetObject("barChangePassword.Glyph")));
+            this.barChangePassword.Id = 12;
+            this.barChangePassword.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barChangePassword.LargeGlyph")));
+            this.barChangePassword.Name = "barChangePassword";
+            this.barChangePassword.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barChangePassword_ItemClick);
             // 
-            // barButtonItem6
+            // btnLogout
             // 
-            this.barButtonItem6.Caption = "Đăng xuất";
-            this.barButtonItem6.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem6.Glyph")));
-            this.barButtonItem6.Id = 13;
-            this.barButtonItem6.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem6.LargeGlyph")));
-            this.barButtonItem6.Name = "barButtonItem6";
+            this.btnLogout.Caption = "Đăng xuất";
+            this.btnLogout.Glyph = ((System.Drawing.Image)(resources.GetObject("btnLogout.Glyph")));
+            this.btnLogout.Id = 13;
+            this.btnLogout.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnLogout.LargeGlyph")));
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnLogout_ItemClick);
+            // 
+            // barButtonItem7
+            // 
+            this.barButtonItem7.ActAsDropDown = true;
+            this.barButtonItem7.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.DropDown;
+            this.barButtonItem7.Caption = "Nhà phân phối";
+            this.barButtonItem7.DropDownControl = this.popupMenu1;
+            this.barButtonItem7.Id = 14;
+            this.barButtonItem7.Name = "barButtonItem7";
+            // 
+            // popupMenu1
+            // 
+            this.popupMenu1.Name = "popupMenu1";
+            this.popupMenu1.Ribbon = this.ribbon;
+            // 
+            // btnNPP
+            // 
+            this.btnNPP.Caption = "Nhà phân phối";
+            this.btnNPP.Glyph = ((System.Drawing.Image)(resources.GetObject("btnNPP.Glyph")));
+            this.btnNPP.Id = 15;
+            this.btnNPP.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnNPP.LargeGlyph")));
+            this.btnNPP.Name = "btnNPP";
+            this.btnNPP.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnNPP_ItemClick);
             // 
             // ribbonPage1
             // 
@@ -220,7 +242,7 @@
             this.ribbonPageGroup2.ItemLinks.Add(this.btnSach);
             this.ribbonPageGroup2.ItemLinks.Add(this.btnTheLoai);
             this.ribbonPageGroup2.ItemLinks.Add(this.btnNXB);
-            this.ribbonPageGroup2.ItemLinks.Add(this.btnTacGia);
+            this.ribbonPageGroup2.ItemLinks.Add(this.btnNPP);
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
             this.ribbonPageGroup2.Text = "Thông tin sách";
             // 
@@ -261,8 +283,8 @@
             // 
             // ribbonPageGroup6
             // 
-            this.ribbonPageGroup6.ItemLinks.Add(this.barButtonItem5);
-            this.ribbonPageGroup6.ItemLinks.Add(this.barButtonItem6);
+            this.ribbonPageGroup6.ItemLinks.Add(this.barChangePassword);
+            this.ribbonPageGroup6.ItemLinks.Add(this.btnLogout);
             this.ribbonPageGroup6.Name = "ribbonPageGroup6";
             this.ribbonPageGroup6.Text = "Tùy chỉnh";
             // 
@@ -276,6 +298,15 @@
             // xtraTabbedMdiManager1
             // 
             this.xtraTabbedMdiManager1.MdiParent = this;
+            // 
+            // btnTacGia
+            // 
+            this.btnTacGia.Caption = "Tác giả";
+            this.btnTacGia.Glyph = ((System.Drawing.Image)(resources.GetObject("btnTacGia.Glyph")));
+            this.btnTacGia.Id = 6;
+            this.btnTacGia.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnTacGia.LargeGlyph")));
+            this.btnTacGia.Name = "btnTacGia";
+            this.btnTacGia.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnTacGia_ItemClick);
             // 
             // frmMain
             // 
@@ -293,6 +324,7 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMain_FormClosing);
             this.Load += new System.EventHandler(this.frmMain_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -310,7 +342,6 @@
         private DevExpress.XtraBars.BarButtonItem btnSach;
         private DevExpress.XtraBars.BarButtonItem btnTheLoai;
         private DevExpress.XtraBars.BarButtonItem btnNXB;
-        private DevExpress.XtraBars.BarButtonItem btnTacGia;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage2;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage3;
@@ -323,8 +354,12 @@
         private DevExpress.XtraBars.SkinRibbonGalleryBarItem skinRibbonGalleryBarItem1;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup4;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup5;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem5;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem6;
+        private DevExpress.XtraBars.BarButtonItem barChangePassword;
+        private DevExpress.XtraBars.BarButtonItem btnLogout;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup6;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem7;
+        private DevExpress.XtraBars.PopupMenu popupMenu1;
+        private DevExpress.XtraBars.BarButtonItem btnNPP;
+        private DevExpress.XtraBars.BarButtonItem btnTacGia;
     }
 }

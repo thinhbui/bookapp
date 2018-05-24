@@ -155,12 +155,10 @@
             this.gridView2.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.gridColumn5,
             this.gridColumn6,
-            this.gridColumn7
-            });
+            this.gridColumn7});
             this.gridView2.GridControl = this.bangHD;
             this.gridView2.Name = "gridView2";
             this.gridView2.OptionsView.ShowFooter = true;
-
             // 
             // gridColumn5
             // 
@@ -391,7 +389,7 @@
             this.ClientSize = new System.Drawing.Size(978, 444);
             this.Controls.Add(this.layoutControl1);
             this.Name = "frmKhachHang";
-            this.Text = "frmKhachHang";
+            this.Text = "Khách hàng";
             this.Load += new System.EventHandler(this.frmKhachHang_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);

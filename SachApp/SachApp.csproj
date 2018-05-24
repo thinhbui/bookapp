@@ -75,11 +75,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CuaHangSachDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CuaHangSachDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="frmAddKhachHang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,6 +98,12 @@
     </Compile>
     <Compile Include="frmBanSach.Designer.cs">
       <DependentUpon>frmBanSach.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmChangePassword.Designer.cs">
+      <DependentUpon>frmChangePassword.cs</DependentUpon>
     </Compile>
     <Compile Include="frmChiTietHoaDon.cs">
       <SubType>Form</SubType>
@@ -232,6 +233,9 @@
     <EmbeddedResource Include="frmBanSach.resx">
       <DependentUpon>frmBanSach.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmChangePassword.resx">
+      <DependentUpon>frmChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmChiTietHoaDon.resx">
       <DependentUpon>frmChiTietHoaDon.cs</DependentUpon>
     </EmbeddedResource>
@@ -300,17 +304,6 @@
     <EmbeddedResource Include="rptPhieuNhap.resx">
       <DependentUpon>rptPhieuNhap.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="CuaHangSachDataSet.xsc">
-      <DependentUpon>CuaHangSachDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="CuaHangSachDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>CuaHangSachDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="CuaHangSachDataSet.xss">
-      <DependentUpon>CuaHangSachDataSet.xsd</DependentUpon>
-    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

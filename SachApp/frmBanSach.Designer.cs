@@ -369,7 +369,7 @@
             // colTacGia
             // 
             this.colTacGia.Caption = "Tác giả";
-            this.colTacGia.FieldName = "TENTG";
+            this.colTacGia.FieldName = "TACGIA";
             this.colTacGia.Name = "colTacGia";
             this.colTacGia.Visible = true;
             this.colTacGia.VisibleIndex = 7;

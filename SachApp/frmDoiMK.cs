@@ -19,9 +19,8 @@ namespace CuaHangSach
         {
             InitializeComponent();
         }
-        NhanVien obj = new NhanVien();
         NhanVienBus bus = new NhanVienBus();
-
+        public NhanVien nvObj = new NhanVien();
         private void btnDoi_Click(object sender, EventArgs e)
         { 
         //{
@@ -54,6 +53,11 @@ namespace CuaHangSach
         private void btnHuy_Click(object sender, EventArgs e)
         {
             this.Hide();
+        }
+
+        private void frmDoiMK_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

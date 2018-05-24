@@ -16,9 +16,9 @@ namespace SachApp.Service.Models
 
         public int? MATHELOAI { get; set; }
 
+        [StringLength(50)]
+        public string TACGIA { get; set; }
         public int? NAMXUATBAN { get; set; }
-
-        public int? MATG { get; set; }
 
         [StringLength(50)]
         public string BARCODE { get; set; }

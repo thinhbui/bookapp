@@ -75,7 +75,6 @@ namespace SachApp
         {
             dtKH = khBus.GetData();
             LoadKhachHang(dtKH);
-
             txtTenNhanVien.Text = nvObj.TENNV;
             KhoaDieuKhien();
             LoadSach();
@@ -88,7 +87,7 @@ namespace SachApp
             luKhachHang.Properties.DataSource = dt;
             luKhachHang.Properties.ValueMember = "MAKH";
             luKhachHang.Properties.DisplayMember = "TENKH";
-            luKhachHang.ItemIndex = dt.Columns.Count-1;
+            luKhachHang.ItemIndex = dt.Rows.Count > 0 ? dt.Rows.Count - 1 : 1;
         }
         private void LoadSach()
         {
@@ -176,15 +175,22 @@ namespace SachApp
 
         private void btnThem_Click(object sender, EventArgs e)
         {
+            int soluong = int.Parse(spSoLuong.Text);
             ChiTietHoaDon cthdObj = new ChiTietHoaDon();
             cthdObj.MAHD = hdObj.MAHD;
             cthdObj.MASACH = int.Parse(dgvListSach.GetFocusedDataRow()["MASACH"].ToString());
             cthdObj.GIASACH = decimal.Parse(dgvListSach.GetFocusedDataRow()["GIABAN"].ToString());
-            cthdObj.SOLUONG = int.Parse(spSoLuong.Text);
+            cthdObj.SOLUONG = soluong;
             cthdObj.THANHTIEN = int.Parse(spSoLuong.Text) * decimal.Parse(dgvListSach.GetFocusedDataRow()["GIABAN"].ToString());
-
-            cthdBus.Insert(cthdObj);
-            LoadHoaDon();
+            if (soluong > 0)
+            {
+                cthdBus.Insert(cthdObj);
+                LoadHoaDon();
+            }
+            else
+            {
+                XtraMessageBox.Show("Số lượng phải lớn hơn không", "Thông báo!");
+            }
             
         }
 
@@ -192,9 +198,13 @@ namespace SachApp
         {
             if (gridListHoaDon.DataSource != null)
             {
-                lbTenSach.Text = dgvListHoaDon.GetFocusedDataRow()["TENSACH"].ToString();
-                lbDonGia.Text = dgvListHoaDon.GetFocusedDataRow()["GIASACH"].ToString();
-                spSoLuong.Text = dgvListHoaDon.GetFocusedDataRow()["SOLUONG"].ToString();
+                try
+                {
+                    lbTenSach.Text = dgvListHoaDon.GetFocusedDataRow()["TENSACH"].ToString();
+                    lbDonGia.Text = dgvListHoaDon.GetFocusedDataRow()["GIASACH"].ToString();
+                    spSoLuong.Text = dgvListHoaDon.GetFocusedDataRow()["SOLUONG"].ToString();
+                }
+                catch { }
             }
         }
 

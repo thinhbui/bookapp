@@ -34,6 +34,7 @@ namespace SachApp
             this.components = new System.ComponentModel.Container();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.lkQuyen = new DevExpress.XtraEditors.LookUpEdit();
+            this.cuaHangSachDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cbGT = new DevExpress.XtraEditors.ComboBoxEdit();
             this.deNgaySinh = new DevExpress.XtraEditors.DateEdit();
             this.txtEmail = new DevExpress.XtraEditors.TextEdit();
@@ -77,13 +78,10 @@ namespace SachApp
             this.txtNgaySinh = new DevExpress.XtraLayout.LayoutControlItem();
             this.comboBoxEditGT = new DevExpress.XtraLayout.LayoutControlItem();
             this.layout1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.cuaHangSachDataSet = new SachApp.CuaHangSachDataSet();
-            this.cuaHangSachDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.quyenBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.quyenTableAdapter = new SachApp.CuaHangSachDataSetTableAdapters.QuyenTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lkQuyen.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cuaHangSachDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbGT.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.deNgaySinh.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.deNgaySinh.Properties)).BeginInit();
@@ -114,9 +112,6 @@ namespace SachApp
             ((System.ComponentModel.ISupportInitialize)(this.txtNgaySinh)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEditGT)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layout1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cuaHangSachDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cuaHangSachDataSetBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.quyenBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -157,7 +152,6 @@ namespace SachApp
             this.lkQuyen.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("MAQUYEN", "Mã quyền", 72, DevExpress.Utils.FormatType.Numeric, "", true, DevExpress.Utils.HorzAlignment.Far),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("TENQUYEN", "Tên quyền", 63, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near)});
-            this.lkQuyen.Properties.DataSource = this.quyenBindingSource;
             this.lkQuyen.Properties.DisplayMember = "TENQUYEN";
             this.lkQuyen.Properties.ValueMember = "MAQUYEN";
             this.lkQuyen.Size = new System.Drawing.Size(280, 20);
@@ -593,25 +587,6 @@ namespace SachApp
             this.layout1.Text = "Quyền";
             this.layout1.TextSize = new System.Drawing.Size(68, 13);
             // 
-            // cuaHangSachDataSet
-            // 
-            this.cuaHangSachDataSet.DataSetName = "CuaHangSachDataSet";
-            this.cuaHangSachDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // cuaHangSachDataSetBindingSource
-            // 
-            this.cuaHangSachDataSetBindingSource.DataSource = this.cuaHangSachDataSet;
-            this.cuaHangSachDataSetBindingSource.Position = 0;
-            // 
-            // quyenBindingSource
-            // 
-            this.quyenBindingSource.DataMember = "Quyen";
-            this.quyenBindingSource.DataSource = this.cuaHangSachDataSetBindingSource;
-            // 
-            // quyenTableAdapter
-            // 
-            this.quyenTableAdapter.ClearBeforeFill = true;
-            // 
             // frmNhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -619,10 +594,12 @@ namespace SachApp
             this.ClientSize = new System.Drawing.Size(730, 448);
             this.Controls.Add(this.layoutControl1);
             this.Name = "frmNhanVien";
+            this.Text = "Nhân viên";
             this.Load += new System.EventHandler(this.frmNhanVien_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.lkQuyen.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cuaHangSachDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbGT.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.deNgaySinh.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.deNgaySinh.Properties)).EndInit();
@@ -653,9 +630,6 @@ namespace SachApp
             ((System.ComponentModel.ISupportInitialize)(this.txtNgaySinh)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEditGT)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layout1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cuaHangSachDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cuaHangSachDataSetBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.quyenBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -709,9 +683,6 @@ namespace SachApp
    
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
         private System.Windows.Forms.BindingSource cuaHangSachDataSetBindingSource;
-        private CuaHangSachDataSet cuaHangSachDataSet;
-        private System.Windows.Forms.BindingSource quyenBindingSource;
-        private CuaHangSachDataSetTableAdapters.QuyenTableAdapter quyenTableAdapter;
         // private Service.QuyenDataSetTableAdapters.QuyenTableAdapter quyenTableAdapter;
     }
 }

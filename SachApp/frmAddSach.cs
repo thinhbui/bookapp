@@ -35,18 +35,19 @@ namespace SachApp
         public int maSach;
 
         public delegate void loadDataChiTiet(string tenSach);
-
         public loadDataChiTiet getData;
 
+        public delegate void loadSach();
+        public loadSach reloadData;
 
 
         private void frmAddSach_Load(object sender, EventArgs e)
         {
             txtMasach.Enabled = false;
 
-            luTacGia.Properties.DataSource = tgBus.GetTacGia();
-            luTacGia.Properties.ValueMember = "MATG";
-            luTacGia.Properties.DisplayMember = "TENTG";
+            //luTacGia.Properties.DataSource = tgBus.GetTacGia();
+            //luTacGia.Properties.ValueMember = "MATG";
+            //luTacGia.Properties.DisplayMember = "TENTG";
 
             luNXB.Properties.DataSource = nxbBus.GetNXB();
             luNXB.Properties.ValueMember = "MANXB";
@@ -64,7 +65,7 @@ namespace SachApp
                 txtMasach.Text = dt.Rows[0]["MASACH"].ToString();
                 txtTenSach.Text = dt.Rows[0]["TENSACH"].ToString();
                 txtBarcode.Text = dt.Rows[0]["BARCODE"].ToString();
-                luTacGia.EditValue = int.Parse(dt.Rows[0]["MATG"].ToString());
+                txtTacGia.Text = dt.Rows[0]["TACGIA"].ToString();
                 luNXB.EditValue = int.Parse(dt.Rows[0]["MANXB"].ToString());
                 luTheLoai.EditValue = int.Parse(dt.Rows[0]["MATHELOAI"].ToString());
                 txtNamXuatBan.Text = dt.Rows[0]["NAMXUATBAN"].ToString();
@@ -80,7 +81,7 @@ namespace SachApp
 
             obj.TENSACH = txtTenSach.Text;
             obj.BARCODE = txtBarcode.Text;
-            obj.MATG = int.Parse(luTacGia.EditValue.ToString());
+            obj.TACGIA = txtTacGia.Text;
             obj.MANXB = int.Parse(luNXB.EditValue.ToString());
             obj.MATHELOAI = int.Parse(luTheLoai.EditValue.ToString());
             obj.NAMXUATBAN = int.Parse(txtNamXuatBan.Text);
@@ -103,9 +104,11 @@ namespace SachApp
                 //ctpnObj.DONGIA = obj.GIAMUA;
                 //ctpnObj.THANHTIEN = obj.GIAMUA * obj.SOLUONGKHO;
                 //ctpnBus.Insert(ctpnObj);
-
                 //Get Data
-                getData(obj.TENSACH);
+                //getData(obj.TENSACH);
+
+                //reload data
+                reloadData();
 
                 XtraMessageBox.Show("Thêm thành công");
                 this.Close();

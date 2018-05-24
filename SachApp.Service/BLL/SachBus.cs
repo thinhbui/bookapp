@@ -31,7 +31,7 @@ namespace SachApp.Service.BLL
                 obj.TENSACH = dt.Rows[0]["TENSACH"].ToString();
                 obj.MATHELOAI = int.Parse(dt.Rows[0]["MATHELOAI"].ToString());
                 obj.NAMXUATBAN = int.Parse(dt.Rows[0]["NAMXUATBAN"].ToString());
-                obj.MATG = int.Parse(dt.Rows[0]["MATG"].ToString());
+                obj.TACGIA = dt.Rows[0]["TACGIA"].ToString();
                 obj.BARCODE = dt.Rows[0]["BARCODE"].ToString();
                 obj.GIAMUA = decimal.Parse(dt.Rows[0]["GIAMUA"].ToString());
                 obj.GIABAN = decimal.Parse(dt.Rows[0]["GIABAN"].ToString());

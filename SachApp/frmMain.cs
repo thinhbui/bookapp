@@ -18,10 +18,10 @@ namespace SachApp
         public frmMain()
         {
             InitializeComponent();
-            nvObj = new NhanVienBus().GetUser("admin", "admin");
+          //  nvObj = new NhanVienBus().GetUser("admin", "admin");
         }
 
-        private NhanVien nvObj;
+        public NhanVien nvObj;
 
 
 
@@ -169,6 +169,54 @@ namespace SachApp
             else
             {
                 frmThongKeHoaDon fr = new frmThongKeHoaDon();
+                //fr.nvObj = nvObj;
+                fr.MdiParent = this;
+                fr.Show();
+            }
+        }
+
+    
+
+        private void barChangePassword_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            frmChangePassword frm = new frmChangePassword();
+            frm.nv = nvObj;
+            //frm.IsInsert = true;
+            //frm.reloadData = new frmAddSach.loadSach(LoadListSach);
+            ////frm.LamMoi += new EventHandler(btnHienThi_Click);
+            //frm.ShowInTaskbar = false;
+            frm.ShowDialog();
+        }
+
+        private void btnLogout_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            frmDangNhap frm = new frmDangNhap();
+            frm.Show();
+            Hide();
+        }
+
+        private void btnNPP_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form frm = CheckActiveForm(typeof(frmNhaPhanPhoi));
+            if (frm != null)
+                frm.Activate();
+            else
+            {
+                frmNhaPhanPhoi fr = new frmNhaPhanPhoi();
+                //fr.nvObj = nvObj;
+                fr.MdiParent = this;
+                fr.Show();
+            }
+        }
+
+        private void barButtonItem4_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form frm = CheckActiveForm(typeof(frmThongKePhieuNhap));
+            if (frm != null)
+                frm.Activate();
+            else
+            {
+                frmThongKePhieuNhap fr = new frmThongKePhieuNhap();
                 //fr.nvObj = nvObj;
                 fr.MdiParent = this;
                 fr.Show();

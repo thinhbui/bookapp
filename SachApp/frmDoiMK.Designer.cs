@@ -196,6 +196,7 @@
             this.MinimizeBox = false;
             this.Name = "frmDoiMK";
             this.Text = "Đổi mật khẩu";
+            this.Load += new System.EventHandler(this.frmDoiMK_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.txtMKmoi.Properties)).EndInit();

@@ -121,19 +121,23 @@ namespace SachApp
         }
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            npp.MANPP = int.Parse(dgvNhaPhanPhoi.GetRowCellValue(dgvNhaPhanPhoi.FocusedRowHandle, dgvNhaPhanPhoi.Columns[0]).ToString());
-            npp.TENNPP = txtTenNPP.Text;
-            npp.DIACHI = txtDiaChi.Text;
-            npp.DIENTHOAI = txtDienThoai.Text;
-            npp.EMAIL = txtEmail.Text;
-            npp.FAX = txtFax.Text;
+            try {
+                npp.MANPP = int.Parse(dgvNhaPhanPhoi.GetRowCellValue(dgvNhaPhanPhoi.FocusedRowHandle, dgvNhaPhanPhoi.Columns[0]).ToString());
+                npp.TENNPP = txtTenNPP.Text;
+                npp.DIACHI = txtDiaChi.Text;
+                npp.DIENTHOAI = txtDienThoai.Text;
+                npp.EMAIL = txtEmail.Text;
+                npp.FAX = txtFax.Text;
+                nppBus.Update(npp);
+                XtraMessageBox.Show("Sửa thành công!");
+                HienThi();
+                XoaText();
+                KhoaDieuKhien();
+            } catch { }
+            
 
             //update
-            nppBus.Update(npp);
-            XtraMessageBox.Show("Sửa thành công!");
-            HienThi();
-            XoaText();
-            KhoaDieuKhien();
+            
 
         }
     }

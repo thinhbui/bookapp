@@ -145,7 +145,7 @@
             // gridColumn10
             // 
             this.gridColumn10.Caption = "Tên tác giả";
-            this.gridColumn10.FieldName = "TENTG";
+            this.gridColumn10.FieldName = "TACGIA";
             this.gridColumn10.Name = "gridColumn10";
             this.gridColumn10.Visible = true;
             this.gridColumn10.VisibleIndex = 3;

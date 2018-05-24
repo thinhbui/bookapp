@@ -34,7 +34,6 @@
             this.txtBarcode = new DevExpress.XtraEditors.TextEdit();
             this.luNXB = new DevExpress.XtraEditors.LookUpEdit();
             this.luTheLoai = new DevExpress.XtraEditors.LookUpEdit();
-            this.luTacGia = new DevExpress.XtraEditors.LookUpEdit();
             this.btnLuu = new DevExpress.XtraEditors.SimpleButton();
             this.txtMota = new DevExpress.XtraEditors.TextEdit();
             this.txtGiaBan = new DevExpress.XtraEditors.TextEdit();
@@ -51,18 +50,18 @@
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem12 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlnxb = new DevExpress.XtraLayout.LayoutControlItem();
+            this.txtTacGia = new DevExpress.XtraEditors.TextEdit();
+            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtNamXuatBan.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtBarcode.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.luNXB.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.luTheLoai.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.luTacGia.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMota.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtGiaBan.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtGiaMua.Properties)).BeginInit();
@@ -78,11 +77,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlnxb)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTacGia.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -91,7 +91,6 @@
             this.layoutControl1.Controls.Add(this.txtBarcode);
             this.layoutControl1.Controls.Add(this.luNXB);
             this.layoutControl1.Controls.Add(this.luTheLoai);
-            this.layoutControl1.Controls.Add(this.luTacGia);
             this.layoutControl1.Controls.Add(this.btnLuu);
             this.layoutControl1.Controls.Add(this.txtMota);
             this.layoutControl1.Controls.Add(this.txtGiaBan);
@@ -99,6 +98,7 @@
             this.layoutControl1.Controls.Add(this.spSoLuong);
             this.layoutControl1.Controls.Add(this.txtTenSach);
             this.layoutControl1.Controls.Add(this.txtMasach);
+            this.layoutControl1.Controls.Add(this.txtTacGia);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
             this.layoutControl1.Name = "layoutControl1";
@@ -147,17 +147,6 @@
             this.luTheLoai.Size = new System.Drawing.Size(431, 20);
             this.luTheLoai.StyleController = this.layoutControl1;
             this.luTheLoai.TabIndex = 15;
-            // 
-            // luTacGia
-            // 
-            this.luTacGia.Location = new System.Drawing.Point(82, 84);
-            this.luTacGia.Name = "luTacGia";
-            this.luTacGia.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.luTacGia.Properties.NullText = "";
-            this.luTacGia.Size = new System.Drawing.Size(431, 20);
-            this.luTacGia.StyleController = this.layoutControl1;
-            this.luTacGia.TabIndex = 14;
             // 
             // btnLuu
             // 
@@ -243,11 +232,11 @@
             this.layoutControlItem8,
             this.layoutControlItem9,
             this.layoutControlItem10,
-            this.layoutControlItem3,
             this.layoutControlItem4,
             this.layoutControlItem11,
             this.layoutControlItem12,
-            this.layoutControlnxb});
+            this.layoutControlnxb,
+            this.layoutControlItem3});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "Root";
             this.layoutControlGroup1.Size = new System.Drawing.Size(525, 310);
@@ -324,15 +313,6 @@
             this.layoutControlItem10.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem10.TextVisible = false;
             // 
-            // layoutControlItem3
-            // 
-            this.layoutControlItem3.Control = this.luTacGia;
-            this.layoutControlItem3.Location = new System.Drawing.Point(0, 72);
-            this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(505, 24);
-            this.layoutControlItem3.Text = "Tác giả";
-            this.layoutControlItem3.TextSize = new System.Drawing.Size(67, 13);
-            // 
             // layoutControlItem4
             // 
             this.layoutControlItem4.Control = this.luTheLoai;
@@ -369,6 +349,24 @@
             this.layoutControlnxb.Text = "Năm xuất bản";
             this.layoutControlnxb.TextSize = new System.Drawing.Size(67, 13);
             // 
+            // txtTacGia
+            // 
+            this.txtTacGia.Location = new System.Drawing.Point(82, 84);
+            this.txtTacGia.Name = "txtTacGia";
+            this.txtTacGia.Size = new System.Drawing.Size(431, 20);
+            this.txtTacGia.StyleController = this.layoutControl1;
+            this.txtTacGia.TabIndex = 4;
+            // 
+            // layoutControlItem3
+            // 
+            this.layoutControlItem3.Control = this.txtTacGia;
+            this.layoutControlItem3.CustomizationFormText = "Tác giả";
+            this.layoutControlItem3.Location = new System.Drawing.Point(0, 72);
+            this.layoutControlItem3.Name = "layoutControlItem3";
+            this.layoutControlItem3.Size = new System.Drawing.Size(505, 24);
+            this.layoutControlItem3.Text = "Tác giả";
+            this.layoutControlItem3.TextSize = new System.Drawing.Size(67, 13);
+            // 
             // frmAddSach
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -385,7 +383,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtBarcode.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.luNXB.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.luTheLoai.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.luTacGia.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMota.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtGiaBan.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtGiaMua.Properties)).EndInit();
@@ -401,11 +398,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlnxb)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTacGia.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -431,13 +429,13 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem10;
         private DevExpress.XtraEditors.LookUpEdit luNXB;
         private DevExpress.XtraEditors.LookUpEdit luTheLoai;
-        private DevExpress.XtraEditors.LookUpEdit luTacGia;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem11;
         private DevExpress.XtraEditors.TextEdit txtBarcode;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem12;
         private DevExpress.XtraEditors.TextEdit txtNamXuatBan;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlnxb;
+        private DevExpress.XtraEditors.TextEdit txtTacGia;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
     }
 }

@@ -72,13 +72,14 @@ namespace SachApp
 
         private void frmNhapSach_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'cuaHangSachDataSet.NhaPhanPhoi' table. You can move, or remove it, as needed.
-            this.nhaPhanPhoiTableAdapter.Fill(this.cuaHangSachDataSet.NhaPhanPhoi);
-            // TODO: This line of code loads data into the 'cuaHangSachDataSet.NhaPhanPhoi' table. You can move, or remove it, as needed.
-            this.nhaPhanPhoiTableAdapter.Fill(this.cuaHangSachDataSet.NhaPhanPhoi);
+            DataTable dt = nppBus.GetNPP();
+            //luNPP.Properties.DataSource = dt;
+            //luNPP.Properties.ValueMember = "MANPP";
+            //luNPP.Properties.DisplayMember = "TENNPP";
+            //luNPP.ItemIndex = dt.Rows.Count > 0 ? dt.Rows.Count - 1 : 1;
+            LoadNhaPhanPhoi(dt);
             txtTenNv.Text = nvObj.TENNV;
             KhoaDieuKhien();
-            //dEditNgayLap.Text = DateTime.Now.ToString();
             
         }
 
@@ -87,7 +88,7 @@ namespace SachApp
             luNPP.Properties.DataSource = dt;
             luNPP.Properties.ValueMember = "MANPP";
             luNPP.Properties.DisplayMember = "TENNPP";
-            luNPP.ItemIndex = dt.Rows.Count - 1;
+            luNPP.ItemIndex = dt.Rows.Count > 0 ? dt.Rows.Count - 1 : 0;
         }
 
         private void LoadChiTietPhieuNhap(string tenSach)
@@ -206,14 +207,14 @@ namespace SachApp
         {
             MoKhoaDieuKhien();
 
-            dtNPP = nppBus.GetNPP();
-            LoadNhaPhanPhoi(dtNPP);
+            //dtNPP = nppBus.GetNPP();
+            //LoadNhaPhanPhoi(dtNPP);
             luNPP.ItemIndex = -1;
 
             dEditNgayLap.Text = DateTime.Now.ToString();
 
             pnObj.NGAYLAP = DateTime.Parse(dEditNgayLap.Text.ToString());
-            pnObj.MANV = nvObj.MANV;//Chua co nhan vien
+         //   pnObj.MANV = nvObj.MANV;//Chua co nhan vien
             pnObj.MANPP = int.Parse(luNPP.EditValue.ToString());
             pnObj.TONGTIEN = 0;
             pnBus.Insert(pnObj);

@@ -40,7 +40,8 @@ namespace SachApp
         {
             frmAddSach frm = new frmAddSach();
             frm.IsInsert = true;
-            frm.LamMoi += new EventHandler(btnHienThi_Click);
+            frm.reloadData = new frmAddSach.loadSach(LoadListSach);
+            //frm.LamMoi += new EventHandler(btnHienThi_Click);
             frm.ShowInTaskbar = false;
             frm.ShowDialog();
         }

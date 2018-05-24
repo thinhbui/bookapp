@@ -72,7 +72,7 @@ namespace SachApp
         private void frmNhanVien_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'cuaHangSachDataSet.Quyen' table. You can move, or remove it, as needed.
-            this.quyenTableAdapter.Fill(this.cuaHangSachDataSet.Quyen);
+         //   this.quyenTableAdapter.Fill(this.cuaHangSachDataSet.Quyen);
 
             lockControl();
             show();

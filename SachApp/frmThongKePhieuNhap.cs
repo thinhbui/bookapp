@@ -100,7 +100,7 @@ namespace SachApp
         private void frmThongKePhieuNhap_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'cuaHangSachDataSet.NhanVien' table. You can move, or remove it, as needed.
-            this.nhanVienTableAdapter.Fill(this.cuaHangSachDataSet.NhanVien);
+         //   this.nhanVienTableAdapter.Fill(this.cuaHangSachDataSet.NhanVien);
             // TODO: This line of code loads data into the 'nhanVienDataSet.NhanVien' table. You can move, or remove it, as needed.
             //this.nhanVienTableAdapter.Fill(this.nhanVienDataSet.NhanVien);
             //showPN();

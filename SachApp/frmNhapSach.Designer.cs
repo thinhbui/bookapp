@@ -66,9 +66,7 @@
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.txtTongTien = new DevExpress.XtraLayout.SimpleLabelItem();
             this.txtTenSach = new DevExpress.XtraLayout.SimpleLabelItem();
-            this.cuaHangSachDataSet = new SachApp.CuaHangSachDataSet();
             this.nhaPhanPhoiBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.nhaPhanPhoiTableAdapter = new SachApp.CuaHangSachDataSetTableAdapters.NhaPhanPhoiTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.luNPP.Properties)).BeginInit();
@@ -96,7 +94,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTongTien)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTenSach)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cuaHangSachDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nhaPhanPhoiBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -490,17 +487,13 @@
             // 
             // cuaHangSachDataSet
             // 
-            this.cuaHangSachDataSet.DataSetName = "CuaHangSachDataSet";
-            this.cuaHangSachDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // nhaPhanPhoiBindingSource
             // 
             this.nhaPhanPhoiBindingSource.DataMember = "NhaPhanPhoi";
-            this.nhaPhanPhoiBindingSource.DataSource = this.cuaHangSachDataSet;
             // 
             // nhaPhanPhoiTableAdapter
             // 
-            this.nhaPhanPhoiTableAdapter.ClearBeforeFill = true;
             // 
             // frmNhapSach
             // 
@@ -538,7 +531,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTongTien)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTenSach)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cuaHangSachDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nhaPhanPhoiBindingSource)).EndInit();
             this.ResumeLayout(false);
 
@@ -582,8 +574,6 @@
         private DevExpress.XtraLayout.SimpleLabelItem txtTongTien;
         private DevExpress.XtraLayout.SimpleLabelItem txtTenSach;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
-        private CuaHangSachDataSet cuaHangSachDataSet;
         private System.Windows.Forms.BindingSource nhaPhanPhoiBindingSource;
-        private CuaHangSachDataSetTableAdapters.NhaPhanPhoiTableAdapter nhaPhanPhoiTableAdapter;
     }
 }
