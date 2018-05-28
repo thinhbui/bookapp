@@ -53,7 +53,7 @@ namespace SachApp.Service.BLL
             return dao.UpdateNPP(obj);
         }
 
-        public int Delete(int MAPN)
+        public int Delete(string MAPN)
         {
             return dao.Delete(MAPN);
         }

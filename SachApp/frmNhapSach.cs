@@ -28,9 +28,9 @@ namespace SachApp
         DataTable dtNPP = new DataTable();
         DataTable dtCTPN = new DataTable();
         PhieuNhap pnObj = new PhieuNhap();
-
+        ChiTietPhieuNhap ctpn = new ChiTietPhieuNhap();
         public NhanVien nvObj = new NhanVien();
-
+        Sach sach = new Sach();
         // List<ChiTietPhieuNhap> listChiTiet = new List<ChiTietPhieuNhap>();
         //  BindingList<>
 
@@ -39,14 +39,17 @@ namespace SachApp
             txtTenNv.Enabled = false;
             dEditNgayLap.Enabled = false;
             luNPP.Enabled = false;
-            
             txtTenSach.Enabled = false;
             txtTongTien.Enabled = false;
             btnAddNPP.Enabled = false;
-            btnNhap.Enabled = false;
             btnThemMoi.Enabled = true;
             btnTinhTien.Enabled = false;
             btnIn.Enabled = false;
+            lkBook.Enabled = false;
+            btnHuy.Enabled = false;
+            spinQuanity.Enabled = false;
+            btnNhap.Enabled = false;
+            btnAddSach.Enabled = false;
         }
 
         void MoKhoaDieuKhien()
@@ -56,11 +59,15 @@ namespace SachApp
             luNPP.Enabled = true;
             txtTenSach.Enabled = false;
             txtTongTien.Enabled = false;
-            btnAddNPP.Enabled = true;
-            btnNhap.Enabled = true;
+            btnAddNPP.Enabled = true;         
             btnThemMoi.Enabled = false;
             btnTinhTien.Enabled = true;
             btnIn.Enabled = true;
+            lkBook.Enabled = true;
+            spinQuanity.Enabled = true;
+            btnNhap.Enabled = true;
+            btnHuy.Enabled = true;
+            btnAddSach.Enabled = true;
         }
 
         void XoaText()
@@ -79,17 +86,6 @@ namespace SachApp
             LoadNhaPhanPhoi(dt);
             txtTenNv.Text = nvObj.TENNV;
             KhoaDieuKhien();
-            setAutoComplete();
-
-        }
-        private void setAutoComplete()
-        {
-            //AutoCompleteStringCollection collection = new AutoCompleteStringCollection();
-            //collection.AddRange(sachBus.getName());
-         
-            //etTenSach.MaskBox.AutoCompleteSource = AutoCompleteSource.CustomSource;
-            //etTenSach.MaskBox.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-            //etTenSach.MaskBox.AutoCompleteCustomSource = collection;
         }
         private void LoadNhaPhanPhoi(DataTable dt)
         {
@@ -110,7 +106,7 @@ namespace SachApp
             dtCTPN = ctpnBus.GetData(pnObj.MAPN);
             gridChiTietPhieuNhap.DataSource = dtCTPN;
             gridChiTietPhieuNhap.ForceInitialize();
-            txtTS.Text = tenSach;
+            if(tenSach!= null) txtTS.Text = tenSach;
             txtTT.Text = dgvPhieuNhap.Columns["THANHTIEN"].SummaryItem.SummaryValue.ToString();
 
             GridColumn clumnSua = dgvPhieuNhap.Columns["Unbound"];
@@ -247,7 +243,26 @@ namespace SachApp
 
         private void btnNhap_Click(object sender, EventArgs e)
         {
+            ctpn.MAPN = pnObj.MAPN;
+            ctpn.MASACH = int.Parse(lkBook.EditValue.ToString());
+            ctpn.SOLUONG = int.Parse(spinQuanity.Text.ToString());
+            ctpn.DONGIA = sach.GIABAN;
+            ctpn.THANHTIEN = ctpn.SOLUONG * ctpn.DONGIA;
+            ctpnBus.Insert(ctpn);
+            LoadChiTietPhieuNhap(null);
+        }
 
+        private void btnHuy_Click(object sender, EventArgs e)
+        {
+            try {
+                pnBus.Delete(pnObj.MAPN);
+                KhoaDieuKhien();
+            } catch { }
+        }
+
+        private void lkBook_EditValueChanged(object sender, EventArgs e)
+        {
+            sach = sachBus.GetSachByID(int.Parse(lkBook.EditValue.ToString()));
         }
     }
 }

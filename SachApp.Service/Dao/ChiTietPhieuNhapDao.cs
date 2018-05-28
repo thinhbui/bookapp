@@ -11,7 +11,7 @@ namespace SachApp.Service.Dao
 {
     public class ChiTietPhieuNhapDao : dbContext
     {
-        public DataTable GetData(int maPN)
+        public DataTable GetDataByMaPN(string maPN)
         {
             SqlParameter[] para =
            {

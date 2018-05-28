@@ -14,7 +14,7 @@ namespace SachApp.Service.BLL
         ChiTietPhieuNhapDao dao = new ChiTietPhieuNhapDao();
         public DataTable GetData(string maPN)
         {
-            return dao.GetData(maPN);
+            return dao.GetDataByMaPN(maPN);
         }
 
         public DataTable GetDataById(int maPN,int maSach)

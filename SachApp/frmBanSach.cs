@@ -247,7 +247,7 @@ namespace SachApp
 
         private void luKhachHang_EditValueChanged(object sender, EventArgs e)
         {
-            hdObj = hdBus.GetNewHoaDon();
+            //hdObj = hdBus.GetNewHoaDon();
             if (hdObj != null)
             {
                 hdObj.MAKH = int.Parse(luKhachHang.EditValue.ToString());

@@ -63,7 +63,7 @@ namespace SachApp.Service.Dao
         }
 
 
-        public int Delete(int MAPN)
+        public int Delete(string MAPN)
         {
             SqlParameter[] para =
                {

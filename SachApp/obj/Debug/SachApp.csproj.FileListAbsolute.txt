@@ -583,6 +583,7 @@ C:\Users\buith\Desktop\SachApp\SachApp\obj\Debug\SachApp.frmAddKhachHang.resourc
 C:\Users\buith\Desktop\SachApp\SachApp\obj\Debug\SachApp.frmAddNPP.resources
 C:\Users\buith\Desktop\SachApp\SachApp\obj\Debug\SachApp.frmAddSach.resources
 C:\Users\buith\Desktop\SachApp\SachApp\obj\Debug\SachApp.frmBanSach.resources
+C:\Users\buith\Desktop\SachApp\SachApp\obj\Debug\SachApp.frmChangePassword.resources
 C:\Users\buith\Desktop\SachApp\SachApp\obj\Debug\SachApp.frmChiTietHoaDon.resources
 C:\Users\buith\Desktop\SachApp\SachApp\obj\Debug\SachApp.frmChiTietPhieuNhap.resources
 C:\Users\buith\Desktop\SachApp\SachApp\obj\Debug\SachApp.frmDangNhap.resources
@@ -771,4 +772,3 @@ C:\Users\buith\Desktop\SachApp\SachApp\bin\Debug\ja\DevExpress.XtraCharts.v15.1.
 C:\Users\buith\Desktop\SachApp\SachApp\bin\Debug\ru\DevExpress.XtraCharts.v15.1.Wizard.resources.dll
 C:\Users\buith\Desktop\SachApp\SachApp\obj\Debug\SachApp.exe
 C:\Users\buith\Desktop\SachApp\SachApp\obj\Debug\SachApp.pdb
-C:\Users\buith\Desktop\SachApp\SachApp\obj\Debug\SachApp.frmChangePassword.resources

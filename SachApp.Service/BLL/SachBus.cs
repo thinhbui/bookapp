@@ -17,6 +17,28 @@ namespace SachApp.Service.BLL
         {
             return dao.GetData();
         }
+        public Sach GetSachByID(int maSach)
+        {
+            Sach obj = new Sach();
+            DataTable dt = dao.GetDataByID(maSach);
+            if (dt.Rows.Count > 0)
+            {
+                obj.MASACH = int.Parse(dt.Rows[0]["MASACH"].ToString());
+                obj.TENSACH = dt.Rows[0]["TENSACH"].ToString();
+                obj.MATHELOAI = int.Parse(dt.Rows[0]["MATHELOAI"].ToString());
+                obj.NAMXUATBAN = int.Parse(dt.Rows[0]["NAMXUATBAN"].ToString());
+                obj.TACGIA = dt.Rows[0]["TACGIA"].ToString();
+                obj.BARCODE = dt.Rows[0]["BARCODE"].ToString();
+                obj.GIAMUA = decimal.Parse(dt.Rows[0]["GIAMUA"].ToString());
+                obj.GIABAN = decimal.Parse(dt.Rows[0]["GIABAN"].ToString());
+                obj.SOLUONGKHO = int.Parse(dt.Rows[0]["SOLUONGKHO"].ToString());
+                obj.MANXB = int.Parse(dt.Rows[0]["MANXB"].ToString());
+                obj.MOTA = dt.Rows[0]["MOTA"].ToString();
+                obj.CREATEDATE = DateTime.Parse(dt.Rows[0]["CREATEDATE"].ToString());
+                return obj;
+            }
+            return null;
+        }
         public DataTable GetDataByID(int maSach)
         {
             return dao.GetDataByID(maSach);
@@ -42,8 +64,7 @@ namespace SachApp.Service.BLL
                 obj.CREATEDATE = DateTime.Parse(dt.Rows[0]["CREATEDATE"].ToString());
                 return obj;
             }
-            else
-                return null;
+            return null;
         }
 
         public string[] getName()
