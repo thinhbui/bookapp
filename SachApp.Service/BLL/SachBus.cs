@@ -1,6 +1,7 @@
 ﻿using SachApp.Service.Dao;
 using SachApp.Service.Models;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -45,7 +46,20 @@ namespace SachApp.Service.BLL
                 return null;
         }
 
-
+        public string[] getName()
+        {
+            DataTable dt = dao.GetName();
+            if (dt.Rows.Count > 0)
+            {
+                string[] names = new string[dt.Rows.Count];
+                for( int i =0; i< dt.Rows.Count; i++)
+                {
+                    names[i] = (dt.Rows[i]["TENSACH"].ToString());
+                }
+                return names;
+            }
+            return null;
+        }
 
         public int Insert(Sach obj)
         {

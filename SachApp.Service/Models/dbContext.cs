@@ -24,7 +24,7 @@ namespace SachApp.Service.Models
             conn.Close();
             return dt;
         }
-        public DataTable GetData(string procName,SqlParameter[] para)
+        public DataTable GetData(string procName, SqlParameter[] para)
         {
             DataTable dt = new DataTable();
             SqlCommand cmd = new SqlCommand();
@@ -60,11 +60,19 @@ namespace SachApp.Service.Models
             {
                 cmd.Parameters.AddRange(para);
             }
-            conn.Open();
-            int row = cmd.ExecuteNonQuery(); 
-            conn.Close();
-            return row;
-            
+            try
+            {
+                conn.Open();
+                int row = cmd.ExecuteNonQuery();
+                conn.Close();
+                return row;
+            }
+            catch { }
+            finally
+            {
+                conn.Close();
+            }
+            return 0;
         }
     }
 }

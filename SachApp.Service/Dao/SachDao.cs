@@ -16,6 +16,10 @@ namespace SachApp.Service.Dao
         {
             return base.GetData("SACH_GETALL", null);
         }
+        public DataTable GetName()
+        {
+            return base.GetData("SACH_GETNAME", null);
+        }
         public DataTable GetDataByID(int MASACH)
         {
             SqlParameter[] para =

@@ -28,7 +28,7 @@ namespace SachApp
         TheLoaiBus tlBus = new TheLoaiBus();
         NhaXuatBanBus nxbBus = new NhaXuatBanBus();
         TacGiaBus tgBus = new TacGiaBus();
-    //    ChiTietPhieuNhapBus ctpnBus = new ChiTietPhieuNhapBus();
+        ChiTietPhieuNhapBus ctpnBus = new ChiTietPhieuNhapBus();
 
 
         public string maPN;
@@ -97,18 +97,21 @@ namespace SachApp
                 //get MaSach
                 obj = sachBus.GetNew();
                 //add chitietPhieuNhap
-                //ChiTietPhieuNhap ctpnObj = new ChiTietPhieuNhap();
-                //ctpnObj.MAPN = maPN;
-                //ctpnObj.MASACH = obj.MASACH;
-                //ctpnObj.SOLUONG = obj.SOLUONGKHO;
-                //ctpnObj.DONGIA = obj.GIAMUA;
-                //ctpnObj.THANHTIEN = obj.GIAMUA * obj.SOLUONGKHO;
-                //ctpnBus.Insert(ctpnObj);
+                ChiTietPhieuNhap ctpnObj = new ChiTietPhieuNhap();
+                ctpnObj.MAPN = maPN;
+                ctpnObj.MASACH = obj.MASACH;
+                ctpnObj.SOLUONG = obj.SOLUONGKHO;
+                ctpnObj.DONGIA = obj.GIAMUA;
+                ctpnObj.THANHTIEN = obj.GIAMUA * obj.SOLUONGKHO;
+                ctpnBus.Insert(ctpnObj);
                 //Get Data
                 //getData(obj.TENSACH);
 
                 //reload data
-                reloadData();
+                try { reloadData(); }
+                catch {
+                    getData(obj.TENSACH);
+                }
 
                 XtraMessageBox.Show("Thêm thành công");
                 this.Close();

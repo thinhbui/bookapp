@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmListSach));
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.btnHienThi = new DevExpress.XtraEditors.SimpleButton();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
@@ -80,12 +81,13 @@
             // 
             // btnHienThi
             // 
+            this.btnHienThi.Image = ((System.Drawing.Image)(resources.GetObject("btnHienThi.Image")));
             this.btnHienThi.Location = new System.Drawing.Point(176, 12);
             this.btnHienThi.Name = "btnHienThi";
             this.btnHienThi.Size = new System.Drawing.Size(78, 22);
             this.btnHienThi.StyleController = this.layoutControl1;
             this.btnHienThi.TabIndex = 7;
-            this.btnHienThi.Text = "Hiển thị";
+            this.btnHienThi.Text = "Cập nhật";
             this.btnHienThi.Visible = false;
             this.btnHienThi.Click += new System.EventHandler(this.btnHienThi_Click);
             // 
@@ -177,6 +179,8 @@
             // gridColumn5
             // 
             this.gridColumn5.Caption = "Giá mua";
+            this.gridColumn5.DisplayFormat.FormatString = "n0";
+            this.gridColumn5.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.gridColumn5.FieldName = "GIAMUA";
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.Visible = true;
@@ -185,6 +189,8 @@
             // gridColumn6
             // 
             this.gridColumn6.Caption = "Giá bán";
+            this.gridColumn6.DisplayFormat.FormatString = "n0";
+            this.gridColumn6.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.gridColumn6.FieldName = "GIABAN";
             this.gridColumn6.Name = "gridColumn6";
             this.gridColumn6.Visible = true;
@@ -208,6 +214,7 @@
             // 
             // btnXoa
             // 
+            this.btnXoa.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.Image")));
             this.btnXoa.Location = new System.Drawing.Point(94, 12);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(78, 22);
@@ -217,6 +224,7 @@
             // 
             // btnThemMoi
             // 
+            this.btnThemMoi.Image = ((System.Drawing.Image)(resources.GetObject("btnThemMoi.Image")));
             this.btnThemMoi.Location = new System.Drawing.Point(12, 12);
             this.btnThemMoi.Name = "btnThemMoi";
             this.btnThemMoi.Size = new System.Drawing.Size(78, 22);

@@ -64,7 +64,7 @@
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(602, 303, 250, 350);
             this.layoutControl1.Root = this.layoutControlGroup1;
-            this.layoutControl1.Size = new System.Drawing.Size(376, 105);
+            this.layoutControl1.Size = new System.Drawing.Size(361, 109);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
@@ -73,7 +73,7 @@
             this.btnThoat.Appearance.Font = new System.Drawing.Font("Tahoma", 11F);
             this.btnThoat.Appearance.Options.UseFont = true;
             this.btnThoat.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnThoat.Location = new System.Drawing.Point(182, 72);
+            this.btnThoat.Location = new System.Drawing.Point(183, 72);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(80, 25);
             this.btnThoat.StyleController = this.layoutControl1;
@@ -87,7 +87,7 @@
             this.btnDangNhap.Appearance.Options.UseFont = true;
             this.btnDangNhap.Location = new System.Drawing.Point(96, 72);
             this.btnDangNhap.Name = "btnDangNhap";
-            this.btnDangNhap.Size = new System.Drawing.Size(82, 25);
+            this.btnDangNhap.Size = new System.Drawing.Size(83, 25);
             this.btnDangNhap.StyleController = this.layoutControl1;
             this.btnDangNhap.TabIndex = 6;
             this.btnDangNhap.Text = "Đăng nhập";
@@ -100,7 +100,7 @@
             this.txtPassword.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
             this.txtPassword.Properties.Appearance.Options.UseFont = true;
             this.txtPassword.Properties.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(262, 26);
+            this.txtPassword.Size = new System.Drawing.Size(264, 26);
             this.txtPassword.StyleController = this.layoutControl1;
             this.txtPassword.TabIndex = 5;
             // 
@@ -110,7 +110,7 @@
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
             this.txtUserName.Properties.Appearance.Options.UseFont = true;
-            this.txtUserName.Size = new System.Drawing.Size(262, 26);
+            this.txtUserName.Size = new System.Drawing.Size(264, 26);
             this.txtUserName.StyleController = this.layoutControl1;
             this.txtUserName.TabIndex = 4;
             // 
@@ -127,7 +127,7 @@
             this.emptySpaceItem2});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "Root";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(359, 109);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(361, 109);
             this.layoutControlGroup1.TextVisible = false;
             // 
             // layoutControlItem1
@@ -137,7 +137,7 @@
             this.layoutControlItem1.Control = this.txtUserName;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(339, 30);
+            this.layoutControlItem1.Size = new System.Drawing.Size(341, 30);
             this.layoutControlItem1.Text = "Tài khoản";
             this.layoutControlItem1.TextSize = new System.Drawing.Size(70, 19);
             // 
@@ -148,7 +148,7 @@
             this.layoutControlItem2.Control = this.txtPassword;
             this.layoutControlItem2.Location = new System.Drawing.Point(0, 30);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(339, 30);
+            this.layoutControlItem2.Size = new System.Drawing.Size(341, 30);
             this.layoutControlItem2.Text = "Mật khẩu";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(70, 19);
             // 
@@ -157,14 +157,14 @@
             this.layoutControlItem3.Control = this.btnDangNhap;
             this.layoutControlItem3.Location = new System.Drawing.Point(84, 60);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(86, 29);
+            this.layoutControlItem3.Size = new System.Drawing.Size(87, 29);
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextVisible = false;
             // 
             // layoutControlItem4
             // 
             this.layoutControlItem4.Control = this.btnThoat;
-            this.layoutControlItem4.Location = new System.Drawing.Point(170, 60);
+            this.layoutControlItem4.Location = new System.Drawing.Point(171, 60);
             this.layoutControlItem4.Name = "layoutControlItem4";
             this.layoutControlItem4.Size = new System.Drawing.Size(84, 29);
             this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
@@ -181,9 +181,9 @@
             // emptySpaceItem2
             // 
             this.emptySpaceItem2.AllowHotTrack = false;
-            this.emptySpaceItem2.Location = new System.Drawing.Point(254, 60);
+            this.emptySpaceItem2.Location = new System.Drawing.Point(255, 60);
             this.emptySpaceItem2.Name = "emptySpaceItem2";
-            this.emptySpaceItem2.Size = new System.Drawing.Size(85, 29);
+            this.emptySpaceItem2.Size = new System.Drawing.Size(86, 29);
             this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
             // 
             // frmDangNhap
@@ -192,7 +192,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnThoat;
-            this.ClientSize = new System.Drawing.Size(376, 105);
+            this.ClientSize = new System.Drawing.Size(361, 109);
             this.Controls.Add(this.layoutControl1);
             this.Name = "frmDangNhap";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

@@ -211,15 +211,19 @@ namespace SachApp
         private void btnSua_Click(object sender, EventArgs e)
         {
             ChiTietHoaDon cthdObj = new ChiTietHoaDon();
-            cthdObj.MAHD = hdObj.MAHD;
-            cthdObj.MASACH = int.Parse(dgvListHoaDon.GetFocusedDataRow()["MASACH"].ToString());
-            cthdObj.GIASACH = decimal.Parse(dgvListHoaDon.GetFocusedDataRow()["GIASACH"].ToString());
-            cthdObj.SOLUONG = int.Parse(spSoLuong.Text);
-            cthdObj.THANHTIEN = int.Parse(spSoLuong.Text) * decimal.Parse(dgvListHoaDon.GetFocusedDataRow()["GIASACH"].ToString());
+            try
+            {
+                cthdObj.MAHD = hdObj.MAHD;
+                cthdObj.MASACH = int.Parse(dgvListHoaDon.GetFocusedDataRow()["MASACH"].ToString());
+                cthdObj.GIASACH = decimal.Parse(dgvListHoaDon.GetFocusedDataRow()["GIASACH"].ToString());
+                cthdObj.SOLUONG = int.Parse(spSoLuong.Text);
+                cthdObj.THANHTIEN = int.Parse(spSoLuong.Text) * decimal.Parse(dgvListHoaDon.GetFocusedDataRow()["GIASACH"].ToString());
 
-            cthdBus.Update(cthdObj);
+                cthdBus.Update(cthdObj);
 
-            LoadHoaDon();
+                LoadHoaDon();
+            }
+            catch { }
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
@@ -257,6 +261,11 @@ namespace SachApp
             btnThem.Enabled = false;
             btnSua.Enabled = true;
             btnXoa.Enabled = true;
+        }
+
+        private void btnLuu_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

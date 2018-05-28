@@ -33,6 +33,7 @@ namespace SachApp.Service.Dao
         {
             SqlParameter[] para =
             {
+                new SqlParameter("MAPN",obj.MANV),
                 new SqlParameter("MANV",obj.MANV),
                 new SqlParameter("NGAYLAP",obj.NGAYLAP),
                 new SqlParameter("MANPP",obj.MANPP),

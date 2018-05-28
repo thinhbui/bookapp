@@ -286,6 +286,7 @@
             // gridColumn3
             // 
             this.gridColumn3.Caption = "Đơn giá";
+            this.gridColumn3.DisplayFormat.FormatString = "{n0}";
             this.gridColumn3.FieldName = "GIASACH";
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.Visible = true;
@@ -294,10 +295,12 @@
             // gridColumn4
             // 
             this.gridColumn4.Caption = "Thành tiền";
+            this.gridColumn4.DisplayFormat.FormatString = "n0";
+            this.gridColumn4.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.gridColumn4.FieldName = "THANHTIEN";
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "THANHTIEN", "Tổng ={0:0.##}")});
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "THANHTIEN", "Tổng = {0:n0}đ")});
             this.gridColumn4.Visible = true;
             this.gridColumn4.VisibleIndex = 3;
             // 
@@ -401,6 +404,8 @@
             // colDonGia
             // 
             this.colDonGia.Caption = "Đơn giá";
+            this.colDonGia.DisplayFormat.FormatString = "n0";
+            this.colDonGia.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.colDonGia.FieldName = "GIABAN";
             this.colDonGia.Name = "colDonGia";
             this.colDonGia.Visible = true;

@@ -66,3 +66,4 @@ C:\Users\buith\Desktop\SachApp\SachApp.Service\bin\Debug\EntityFramework.xml
 C:\Users\buith\Desktop\SachApp\SachApp.Service\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\buith\Desktop\SachApp\SachApp.Service\obj\Debug\SachApp.Service.dll
 C:\Users\buith\Desktop\SachApp\SachApp.Service\obj\Debug\SachApp.Service.pdb
+C:\Users\buith\Desktop\SachApp\SachApp.Service\obj\Debug\SachApp.Service.csprojResolveAssemblyReference.cache

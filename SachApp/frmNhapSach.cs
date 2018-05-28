@@ -21,7 +21,7 @@ namespace SachApp
         {
             InitializeComponent();
         }
-
+        SachBus sachBus = new SachBus();
         NhaPhanPhoiBus nppBus = new NhaPhanPhoiBus();
         PhieuNhapBus pnBus = new PhieuNhapBus();
         ChiTietPhieuNhapBus ctpnBus = new ChiTietPhieuNhapBus();
@@ -31,7 +31,7 @@ namespace SachApp
 
         public NhanVien nvObj = new NhanVien();
 
-       // List<ChiTietPhieuNhap> listChiTiet = new List<ChiTietPhieuNhap>();
+        // List<ChiTietPhieuNhap> listChiTiet = new List<ChiTietPhieuNhap>();
         //  BindingList<>
 
         void KhoaDieuKhien()
@@ -39,10 +39,11 @@ namespace SachApp
             txtTenNv.Enabled = false;
             dEditNgayLap.Enabled = false;
             luNPP.Enabled = false;
+            
             txtTenSach.Enabled = false;
             txtTongTien.Enabled = false;
             btnAddNPP.Enabled = false;
-            btnAddSach.Enabled = false;
+            btnNhap.Enabled = false;
             btnThemMoi.Enabled = true;
             btnTinhTien.Enabled = false;
             btnIn.Enabled = false;
@@ -56,7 +57,7 @@ namespace SachApp
             txtTenSach.Enabled = false;
             txtTongTien.Enabled = false;
             btnAddNPP.Enabled = true;
-            btnAddSach.Enabled = true;
+            btnNhap.Enabled = true;
             btnThemMoi.Enabled = false;
             btnTinhTien.Enabled = true;
             btnIn.Enabled = true;
@@ -73,16 +74,23 @@ namespace SachApp
         private void frmNhapSach_Load(object sender, EventArgs e)
         {
             DataTable dt = nppBus.GetNPP();
-            //luNPP.Properties.DataSource = dt;
-            //luNPP.Properties.ValueMember = "MANPP";
-            //luNPP.Properties.DisplayMember = "TENNPP";
-            //luNPP.ItemIndex = dt.Rows.Count > 0 ? dt.Rows.Count - 1 : 1;
+            DataTable dtSach = sachBus.GetData();
+            loadSach(dtSach);
             LoadNhaPhanPhoi(dt);
             txtTenNv.Text = nvObj.TENNV;
             KhoaDieuKhien();
-            
-        }
+            setAutoComplete();
 
+        }
+        private void setAutoComplete()
+        {
+            //AutoCompleteStringCollection collection = new AutoCompleteStringCollection();
+            //collection.AddRange(sachBus.getName());
+         
+            //etTenSach.MaskBox.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            //etTenSach.MaskBox.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            //etTenSach.MaskBox.AutoCompleteCustomSource = collection;
+        }
         private void LoadNhaPhanPhoi(DataTable dt)
         {
             luNPP.Properties.DataSource = dt;
@@ -90,14 +98,20 @@ namespace SachApp
             luNPP.Properties.DisplayMember = "TENNPP";
             luNPP.ItemIndex = dt.Rows.Count > 0 ? dt.Rows.Count - 1 : 0;
         }
-
+        private void loadSach(DataTable dt)
+        {
+            lkBook.Properties.DataSource = dt;
+            lkBook.Properties.ValueMember = "MASACH";
+            lkBook.Properties.DisplayMember = "TENSACH";
+            lkBook.ItemIndex = dt.Rows.Count > 0 ? dt.Rows.Count - 1 : 1;
+        }
         private void LoadChiTietPhieuNhap(string tenSach)
         {
             dtCTPN = ctpnBus.GetData(pnObj.MAPN);
             gridChiTietPhieuNhap.DataSource = dtCTPN;
             gridChiTietPhieuNhap.ForceInitialize();
             txtTS.Text = tenSach;
-            txtTT.Text= dgvPhieuNhap.Columns["THANHTIEN"].SummaryItem.SummaryValue.ToString();
+            txtTT.Text = dgvPhieuNhap.Columns["THANHTIEN"].SummaryItem.SummaryValue.ToString();
 
             GridColumn clumnSua = dgvPhieuNhap.Columns["Unbound"];
             if (clumnSua == null)
@@ -119,7 +133,7 @@ namespace SachApp
                 col.AppearanceCell.Font = new Font("Tahoma", 9, FontStyle.Bold);
                 col.Width = 50;
             }
-           
+
 
 
         }
@@ -149,14 +163,11 @@ namespace SachApp
                         XtraMessageBox.Show("Đã xóa thành công");
                         LoadChiTietPhieuNhap("______");
                     }
-                    catch
-                    {
-                    }
-
+                    catch { }
                 }
 
             }
-            if((e.RowHandle>=0)&&(e.Column.FieldName.Equals("Unbound")))
+            if ((e.RowHandle >= 0) && (e.Column.FieldName.Equals("Unbound")))
             {
                 int maSach = int.Parse(dgvPhieuNhap.GetRowCellValue(e.RowHandle, dgvPhieuNhap.Columns["MASACH"]).ToString());
                 frmAddSach frm = new frmAddSach();
@@ -168,12 +179,6 @@ namespace SachApp
                 frm.ShowDialog();
             }
         }
-
-
-
-
-
-
         private void btnAddSach_Click(object sender, EventArgs e)
         {
             frmAddSach frm = new frmAddSach();
@@ -195,7 +200,8 @@ namespace SachApp
         private void luNPP_EditValueChanged(object sender, EventArgs e)
         {
             pnObj.MANPP = int.Parse(luNPP.EditValue.ToString());
-            pnBus.UpdateNPP(pnObj);
+            try { pnBus.UpdateNPP(pnObj); }
+            catch { }
         }
 
         private void btnIn_Click(object sender, EventArgs e)
@@ -208,29 +214,40 @@ namespace SachApp
             MoKhoaDieuKhien();
 
             //dtNPP = nppBus.GetNPP();
-            //LoadNhaPhanPhoi(dtNPP);
-            luNPP.ItemIndex = -1;
+            //    LoadNhaPhanPhoi(dtNPP);
+          //  try
+//{
+                //luNPP.ItemIndex = -1;
 
-            dEditNgayLap.Text = DateTime.Now.ToString();
-
-            pnObj.NGAYLAP = DateTime.Parse(dEditNgayLap.Text.ToString());
-         //   pnObj.MANV = nvObj.MANV;//Chua co nhan vien
-            pnObj.MANPP = int.Parse(luNPP.EditValue.ToString());
-            pnObj.TONGTIEN = 0;
-            pnBus.Insert(pnObj);
-            pnObj = pnBus.GetNewPhieuNhap();
+                dEditNgayLap.Text = DateTime.Now.ToString();
+                pnObj.MAPN = DateTime.Now.ToString("yyyyMMddhhmmss");
+                pnObj.NGAYLAP = DateTime.Parse(dEditNgayLap.Text.ToString());
+                pnObj.MANV = nvObj.MANV;
+                pnObj.MANPP = int.Parse(luNPP.EditValue.ToString());
+                pnObj.TONGTIEN = 0;
+                pnBus.Insert(pnObj);
+                pnObj = pnBus.GetNewPhieuNhap();
+          //  }
+            //catch { }
         }
 
         private void btnTinhTien_Click(object sender, EventArgs e)
         {
-            pnObj.TONGTIEN = int.Parse(txtTT.Text);
-            pnBus.Update(pnObj);
+            try
+            {
+                pnObj.TONGTIEN = int.Parse(txtTT.Text);
+                pnBus.Update(pnObj);
+                gridChiTietPhieuNhap.DataSource = null;
+                dgvPhieuNhap.Columns.Clear();
+            }
+            catch { }
             XoaText();
-            gridChiTietPhieuNhap.DataSource = null;
-            dgvPhieuNhap.Columns.Clear();
             KhoaDieuKhien();
         }
 
-       
+        private void btnNhap_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

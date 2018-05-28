@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.lkNhanvien = new DevExpress.XtraEditors.LookUpEdit();
+            this.nhanVienBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -48,10 +49,10 @@
             this.lookUpEdit2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.nhanVienBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lkNhanvien.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nhanVienBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbThongKe.Properties)).BeginInit();
@@ -66,7 +67,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nhanVienBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -151,6 +151,8 @@
             // gridColumn3
             // 
             this.gridColumn3.Caption = "Thanh toán";
+            this.gridColumn3.DisplayFormat.FormatString = "{n0}đ";
+            this.gridColumn3.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.gridColumn3.FieldName = "TONGTIEN";
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.OptionsColumn.AllowEdit = false;
@@ -306,15 +308,6 @@
             this.layoutControlItem3.Text = "Từ ngày";
             this.layoutControlItem3.TextSize = new System.Drawing.Size(69, 13);
             // 
-            // cuaHangSachDataSet
-            // 
-            // 
-            // nhanVienBindingSource
-            // 
-            // 
-            // nhanVienTableAdapter
-            // 
-            // 
             // frmThongKeHoaDon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -327,6 +320,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.lkNhanvien.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nhanVienBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbThongKe.Properties)).EndInit();
@@ -341,7 +335,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nhanVienBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

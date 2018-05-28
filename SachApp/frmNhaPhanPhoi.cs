@@ -21,7 +21,7 @@ namespace SachApp
         }
         NhaPhanPhoi npp = new NhaPhanPhoi();
         NhaPhanPhoiBus nppBus = new NhaPhanPhoiBus();
-    //    bool IsInsert = false;
+        bool IsInsert = false;
         void KhoaDieuKhien()
         {
 
@@ -54,7 +54,7 @@ namespace SachApp
             txtDiaChi.Text = string.Empty;
             txtDienThoai.Text = string.Empty;
             txtEmail.Text = string.Empty;
-
+            txtFax.Text = string.Empty;
         }
         void HienThi()
         {
@@ -89,7 +89,8 @@ namespace SachApp
 
         private void btnLamMoi_Click(object sender, EventArgs e)
         {
-            HienThi();
+            MoKhoaDieuKhien();
+            IsInsert = true;
         }
 
         private void frmNhaPhanPhoi_Load(object sender, EventArgs e)
@@ -101,6 +102,7 @@ namespace SachApp
         private void btnSua_Click(object sender, EventArgs e)
         {
             MoKhoaDieuKhien();
+            IsInsert = false;
         }
         private void btnXoa_Click(object sender, EventArgs e)
         {
@@ -121,19 +123,41 @@ namespace SachApp
         }
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            try {
-                npp.MANPP = int.Parse(dgvNhaPhanPhoi.GetRowCellValue(dgvNhaPhanPhoi.FocusedRowHandle, dgvNhaPhanPhoi.Columns[0]).ToString());
-                npp.TENNPP = txtTenNPP.Text;
-                npp.DIACHI = txtDiaChi.Text;
-                npp.DIENTHOAI = txtDienThoai.Text;
-                npp.EMAIL = txtEmail.Text;
-                npp.FAX = txtFax.Text;
-                nppBus.Update(npp);
-                XtraMessageBox.Show("Sửa thành công!");
-                HienThi();
-                XoaText();
-                KhoaDieuKhien();
-            } catch { }
+            if (!IsInsert) {
+                try
+                {
+                    npp.MANPP = int.Parse(dgvNhaPhanPhoi.GetRowCellValue(dgvNhaPhanPhoi.FocusedRowHandle, dgvNhaPhanPhoi.Columns[0]).ToString());
+                    npp.TENNPP = txtTenNPP.Text;
+                    npp.DIACHI = txtDiaChi.Text;
+                    npp.DIENTHOAI = txtDienThoai.Text;
+                    npp.EMAIL = txtEmail.Text;
+                    npp.FAX = txtFax.Text;
+                    nppBus.Update(npp);
+                    XtraMessageBox.Show("Sửa thành công!");
+                    HienThi();
+                    XoaText();
+                    KhoaDieuKhien();
+                }
+                catch { }
+            } else
+            {
+                try
+                {
+                   // npp.MANPP = int.Parse(dgvNhaPhanPhoi.GetRowCellValue(dgvNhaPhanPhoi.FocusedRowHandle, dgvNhaPhanPhoi.Columns[0]).ToString());
+                    npp.TENNPP = txtTenNPP.Text;
+                    npp.DIACHI = txtDiaChi.Text;
+                    npp.DIENTHOAI = txtDienThoai.Text;
+                    npp.EMAIL = txtEmail.Text;
+                    npp.FAX = txtFax.Text;
+                    nppBus.Insert(npp);
+                    XtraMessageBox.Show("Thêm thành công!");
+                    HienThi();
+                    XoaText();
+                    KhoaDieuKhien();
+                }
+                catch { }
+            }
+          
             
 
             //update

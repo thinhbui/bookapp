@@ -43,7 +43,6 @@
             this.btnLamMoi = new DevExpress.XtraEditors.SimpleButton();
             this.btnLuu = new DevExpress.XtraEditors.SimpleButton();
             this.txtEmail = new DevExpress.XtraEditors.TextEdit();
-            this.txtFax = new DevExpress.XtraEditors.TextEdit();
             this.txtDienThoai = new DevExpress.XtraEditors.TextEdit();
             this.txtDiaChi = new DevExpress.XtraEditors.TextEdit();
             this.txtTenNPP = new DevExpress.XtraEditors.TextEdit();
@@ -51,19 +50,19 @@
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.txtFax = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlNPP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhaPhanPhoi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEmail.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtFax.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDienThoai.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDiaChi.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTenNPP.Properties)).BeginInit();
@@ -71,13 +70,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtFax.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -201,7 +201,7 @@
             this.btnLamMoi.Size = new System.Drawing.Size(215, 22);
             this.btnLamMoi.StyleController = this.layoutControl1;
             this.btnLamMoi.TabIndex = 10;
-            this.btnLamMoi.Text = "Làm mới";
+            this.btnLamMoi.Text = "Thêm";
             this.btnLamMoi.Click += new System.EventHandler(this.btnLamMoi_Click);
             // 
             // btnLuu
@@ -222,14 +222,6 @@
             this.txtEmail.Size = new System.Drawing.Size(781, 20);
             this.txtEmail.StyleController = this.layoutControl1;
             this.txtEmail.TabIndex = 8;
-            // 
-            // txtFax
-            // 
-            this.txtFax.Location = new System.Drawing.Point(542, 36);
-            this.txtFax.Name = "txtFax";
-            this.txtFax.Size = new System.Drawing.Size(343, 20);
-            this.txtFax.StyleController = this.layoutControl1;
-            this.txtFax.TabIndex = 7;
             // 
             // txtDienThoai
             // 
@@ -302,15 +294,6 @@
             this.layoutControlItem3.Text = "Điện thoại";
             this.layoutControlItem3.TextSize = new System.Drawing.Size(89, 13);
             // 
-            // layoutControlItem4
-            // 
-            this.layoutControlItem4.Control = this.txtFax;
-            this.layoutControlItem4.Location = new System.Drawing.Point(438, 24);
-            this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(439, 24);
-            this.layoutControlItem4.Text = "Fax";
-            this.layoutControlItem4.TextSize = new System.Drawing.Size(89, 13);
-            // 
             // layoutControlItem5
             // 
             this.layoutControlItem5.Control = this.txtEmail;
@@ -365,6 +348,23 @@
             this.layoutControlItem10.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem10.TextVisible = false;
             // 
+            // layoutControlItem4
+            // 
+            this.layoutControlItem4.Control = this.txtFax;
+            this.layoutControlItem4.Location = new System.Drawing.Point(438, 24);
+            this.layoutControlItem4.Name = "layoutControlItem4";
+            this.layoutControlItem4.Size = new System.Drawing.Size(439, 24);
+            this.layoutControlItem4.Text = "Fax";
+            this.layoutControlItem4.TextSize = new System.Drawing.Size(89, 13);
+            // 
+            // txtFax
+            // 
+            this.txtFax.Location = new System.Drawing.Point(542, 36);
+            this.txtFax.Name = "txtFax";
+            this.txtFax.Size = new System.Drawing.Size(343, 20);
+            this.txtFax.StyleController = this.layoutControl1;
+            this.txtFax.TabIndex = 7;
+            // 
             // frmNhaPhanPhoi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -379,7 +379,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridControlNPP)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhaPhanPhoi)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEmail.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtFax.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDienThoai.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDiaChi.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTenNPP.Properties)).EndInit();
@@ -387,13 +386,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtFax.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -411,10 +411,8 @@
         private DevExpress.XtraEditors.SimpleButton btnLamMoi;
         private DevExpress.XtraEditors.SimpleButton btnLuu;
         private DevExpress.XtraEditors.TextEdit txtEmail;
-        private DevExpress.XtraEditors.TextEdit txtFax;
         private DevExpress.XtraEditors.TextEdit txtDienThoai;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
@@ -429,5 +427,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
+        private DevExpress.XtraEditors.TextEdit txtFax;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
     }
 }

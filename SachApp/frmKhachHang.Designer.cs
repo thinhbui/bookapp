@@ -185,10 +185,12 @@
             // gridColumn7
             // 
             this.gridColumn7.Caption = "Tổng tiền";
+            this.gridColumn7.DisplayFormat.FormatString = "n0";
+            this.gridColumn7.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.gridColumn7.FieldName = "TONGTIEN";
             this.gridColumn7.Name = "gridColumn7";
             this.gridColumn7.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "TONGTIEN", "Tổng tiền: {0:0.##}")});
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "TONGTIEN", "Tổng tiền:  {0:n0}đ")});
             this.gridColumn7.Visible = true;
             this.gridColumn7.VisibleIndex = 2;
             this.gridColumn7.Width = 191;
