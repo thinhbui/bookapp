@@ -12,6 +12,7 @@ using SachApp.Service.Dao;
 using SachApp.Service.Models;
 using SachApp.Service.BLL;
 using DevExpress.XtraGrid.Columns;
+using DevExpress.XtraReports.UI;
 
 namespace SachApp
 {
@@ -235,6 +236,8 @@ namespace SachApp
                 pnBus.Update(pnObj);
                 gridChiTietPhieuNhap.DataSource = null;
                 dgvPhieuNhap.Columns.Clear();
+                reportPhieuNhap rp = new reportPhieuNhap(pnObj.MAPN);
+                rp.ShowPreview();
             }
             catch { }
             XoaText();

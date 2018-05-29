@@ -187,7 +187,7 @@
             this.colThanhTien});
             this.dgvPhieuNhap.GridControl = this.gridChiTietPhieuNhap;
             this.dgvPhieuNhap.Name = "dgvPhieuNhap";
-            this.dgvPhieuNhap.OptionsBehavior.Editable = false;
+            this.dgvPhieuNhap.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Top;
             this.dgvPhieuNhap.OptionsView.ShowFooter = true;
             this.dgvPhieuNhap.RowCellClick += new DevExpress.XtraGrid.Views.Grid.RowCellClickEventHandler(this.dgvPhieuNhap_RowCellClick);
             this.dgvPhieuNhap.CustomColumnDisplayText += new DevExpress.XtraGrid.Views.Base.CustomColumnDisplayTextEventHandler(this.dgvPhieuNhap_CustomColumnDisplayText);

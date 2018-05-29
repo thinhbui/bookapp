@@ -52,7 +52,10 @@ namespace SachApp.Service.BLL
         {
             return dao.UpdateNPP(obj);
         }
-
+        public DataTable GetPrintfData(string maPN)
+        {
+            return dao.GetPrintfData(maPN);
+        }
         public int Delete(string MAPN)
         {
             return dao.Delete(MAPN);

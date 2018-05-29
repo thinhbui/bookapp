@@ -28,6 +28,14 @@ namespace SachApp.Service.Dao
         {
             return base.GetData("PHIEUNHAP_GETNEW", null);
         }
+        public DataTable GetPrintfData(string MAPN)
+        {
+            SqlParameter[] para =
+            {
+                new SqlParameter("MAPN", MAPN)
+            };
+            return base.GetData("PHIEUNHAP_GET_PRINTFINFO", para);
+        }
 
         public int Insert(PhieuNhap obj)
         {
