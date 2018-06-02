@@ -108,7 +108,11 @@ namespace SachApp
             gridChiTietPhieuNhap.DataSource = dtCTPN;
             gridChiTietPhieuNhap.ForceInitialize();
             if(tenSach!= null) txtTS.Text = tenSach;
-            txtTT.Text = dgvPhieuNhap.Columns["THANHTIEN"].SummaryItem.SummaryValue.ToString();
+            try
+            {
+                txtTT.Text = dgvPhieuNhap.Columns["THANHTIEN"].SummaryItem.SummaryValue.ToString();
+            }
+            catch { }
 
             GridColumn clumnSua = dgvPhieuNhap.Columns["Unbound"];
             if (clumnSua == null)
@@ -259,6 +263,7 @@ namespace SachApp
         {
             try {
                 pnBus.Delete(pnObj.MAPN);
+                dgvPhieuNhap.Columns.Clear();
                 KhoaDieuKhien();
             } catch { }
         }

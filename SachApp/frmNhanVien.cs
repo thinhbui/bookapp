@@ -19,6 +19,7 @@ namespace SachApp
     public partial class frmNhanVien : DevExpress.XtraEditors.XtraForm
     {
         NhanVienBus bus = new NhanVienBus();
+        QuyenBus qBus = new QuyenBus();
         bool isThem = false;
         public frmNhanVien()
         {
@@ -72,14 +73,24 @@ namespace SachApp
         private void frmNhanVien_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'cuaHangSachDataSet.Quyen' table. You can move, or remove it, as needed.
-         //   this.quyenTableAdapter.Fill(this.cuaHangSachDataSet.Quyen);
-
+            //   this.quyenTableAdapter.Fill(this.cuaHangSachDataSet.Quyen);
+            loadQuyen();
             lockControl();
             show();
         }
+
+        private void loadQuyen()
+        {
+            DataTable dt = qBus.getQuyen();
+            lkQuyen.Properties.DataSource = dt;
+            lkQuyen.Properties.DisplayMember = "TENQUYEN";
+            lkQuyen.Properties.ValueMember = "MAQUYEN";
+            lkQuyen.ItemIndex = dt.Rows.Count > 0 ? dt.Rows.Count - 1 : 1;
+        }
+
         void init()
         {
-           
+
         }
 
         private void btnThem_Click(object sender, EventArgs e)
@@ -98,15 +109,20 @@ namespace SachApp
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-         //   bus.Delete(int.Parse(txtMa.Text));
-            show();
+            try
+            {
+                bus.Delete(int.Parse(txtMa.Text));
+                show();
+            }
+            catch { }
+
         }
         private void btnLuu_Click(object sender, EventArgs e)
         {
             NhanVien obj = new NhanVien();
             try
             {
-                if (txtTen.Text!="")
+                if (txtTen.Text != "")
                     obj.TENNV = txtTen.Text;
                 if (cbGT.SelectedItem.ToString() != "")
                     obj.GT = cbGT.SelectedItem.ToString();
@@ -124,14 +140,14 @@ namespace SachApp
                     obj.EMAIL = txtEmail.Text;
                 if (lkQuyen.EditValue.ToString() != "")
                     obj.MAQUYEN = int.Parse(lkQuyen.EditValue.ToString());
-                
-              
+
+
             }
             catch { }
-           //obj.NGAYSINH = Convert.ToDateTime(DateTime.ParseExact(deNgaySinh.EditValue.ToString(), "dd/MM/yyyy", new CultureInfo("fr-FR")).ToString("yyyy/MM/dd"));
+            //obj.NGAYSINH = Convert.ToDateTime(DateTime.ParseExact(deNgaySinh.EditValue.ToString(), "dd/MM/yyyy", new CultureInfo("fr-FR")).ToString("yyyy/MM/dd"));
 
             if (isThem)
-            {    
+            {
                 bus.Insert(obj);
                 XtraMessageBox.Show("Thêm thành công!");
                 show();
@@ -162,10 +178,10 @@ namespace SachApp
                 txtTaiKhoan.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, gridView1.Columns[6]).ToString();
                 txtEmail.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, gridView1.Columns[7]).ToString();
                 lkQuyen.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, gridView1.Columns[8]).ToString();
-        }
+            }
             catch { }
         }
 
-      
+
     }
 }

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using SachApp.Service.Dao;
+using SachApp.Service.Models;
 
 namespace SachApp
 {
@@ -20,6 +21,7 @@ namespace SachApp
         }
 
         SachDao sDao = new SachDao();
+        Sach book = new Sach();
 
         private void LoadListSach()
         {
@@ -50,10 +52,32 @@ namespace SachApp
         {
             LoadListSach();
         }
-
+        private void lockControl()
+        {
+            btnXoa.Enabled = false;
+        }
+        private void openControl()
+        {
+            btnXoa.Enabled = true;
+        }
         private void gridControl1_Click(object sender, EventArgs e)
         {
+            openControl();
+            try
+            {
+                book.MASACH = int.Parse(dgvListSach.GetRowCellValue(dgvListSach.FocusedRowHandle, dgvListSach.Columns[0]).ToString());
+            }
+            catch { }
+        }
 
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                sDao.Delete(book.MASACH);
+                LoadListSach();
+            }
+            catch { }
         }
     }
 }

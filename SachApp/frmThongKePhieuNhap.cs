@@ -24,13 +24,13 @@ namespace SachApp
 
         void show()
         {
-          //  gridControl1.DataSource = 
+            //  gridControl1.DataSource = 
         }
         PhieuNhapBus bus = new PhieuNhapBus();
         int id;
         string time1 = null;
         string time2 = null;
-        
+
         void showPN()
         {
             gridControl1.DataSource = bus.GetData();
@@ -43,7 +43,7 @@ namespace SachApp
                 deTo.Text = DateTime.Now.ToString("dd/MM/yyyy");
                 deFrom.Text = DateTime.Now.AddDays(-7).ToString("dd/MM/yyyy");
             }
-            if (cbThongKe.Text == "Tháng") 
+            if (cbThongKe.Text == "Tháng")
             {
                 deTo.Text = DateTime.Now.ToString("dd/MM/yyyy");
                 deFrom.Text = DateTime.Now.AddMonths(-1).ToString("dd/MM/yyyy");
@@ -81,14 +81,14 @@ namespace SachApp
 
             try
             {
-               // gridControl1.DataSource = bus.ThongKePhieuNhap(id, time1, time2);
+                // gridControl1.DataSource = bus.ThongKePhieuNhap(id, time1, time2);
             }
             catch { }
         }
 
         private void deFrom_EditValueChanged(object sender, EventArgs e)
         {
-           
+
             showTk();
         }
 
@@ -99,19 +99,18 @@ namespace SachApp
 
         private void frmThongKePhieuNhap_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'cuaHangSachDataSet.NhanVien' table. You can move, or remove it, as needed.
-         //   this.nhanVienTableAdapter.Fill(this.cuaHangSachDataSet.NhanVien);
-            // TODO: This line of code loads data into the 'nhanVienDataSet.NhanVien' table. You can move, or remove it, as needed.
-            //this.nhanVienTableAdapter.Fill(this.nhanVienDataSet.NhanVien);
-            //showPN();
-
-            //lkNhanvien.Properties.DataSource = nvBus.GetData();
-            //lkNhanvien.Properties.ValueMember = "MANV";
-            //lkNhanvien.Properties.DisplayMember = "TENV";
-            //lkNhanvien.ItemIndex = nvBus.GetData().Rows.Count - 1;
-
+            loadNV();
+            showPN();
         }
 
+        private void loadNV()
+        {
+            DataTable dt = nvBus.GetData();
+            lkNhanvien.Properties.DataSource = dt;
+            lkNhanvien.Properties.DisplayMember = "TENNV";
+            lkNhanvien.Properties.ValueMember = "MANV";
+            lkNhanvien.ItemIndex = dt.Rows.Count > 0 ? dt.Rows.Count - 1 : 1;
+        }
 
         private void gridControl1_DoubleClick(object sender, EventArgs e)
         {

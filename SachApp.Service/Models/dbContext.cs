@@ -42,7 +42,7 @@ namespace SachApp.Service.Models
             conn.Close();
             return dt;
         }
-        public int ExecuteSQL(string strSQL)
+        public int ExecuteSQL(string strSQL) 
         {
             SqlCommand cmd = new SqlCommand(strSQL, conn);
             conn.Open();

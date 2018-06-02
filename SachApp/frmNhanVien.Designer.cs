@@ -31,10 +31,8 @@ namespace SachApp
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.lkQuyen = new DevExpress.XtraEditors.LookUpEdit();
-            this.cuaHangSachDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cbGT = new DevExpress.XtraEditors.ComboBoxEdit();
             this.deNgaySinh = new DevExpress.XtraEditors.DateEdit();
             this.txtEmail = new DevExpress.XtraEditors.TextEdit();
@@ -81,7 +79,6 @@ namespace SachApp
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lkQuyen.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cuaHangSachDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbGT.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.deNgaySinh.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.deNgaySinh.Properties)).BeginInit();
@@ -599,7 +596,6 @@ namespace SachApp
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.lkQuyen.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cuaHangSachDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbGT.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.deNgaySinh.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.deNgaySinh.Properties)).EndInit();
@@ -682,7 +678,6 @@ namespace SachApp
         private DevExpress.XtraLayout.LayoutControlItem layout1;
    
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
-        private System.Windows.Forms.BindingSource cuaHangSachDataSetBindingSource;
         // private Service.QuyenDataSetTableAdapters.QuyenTableAdapter quyenTableAdapter;
     }
 }

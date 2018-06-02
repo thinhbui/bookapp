@@ -117,13 +117,19 @@ namespace SachApp
         private void btnThemMoi_Click(object sender, EventArgs e)
         {
             MoKhoaDieuKhien();
+            try
+            {
+                hdObj.MAKH = int.Parse(luKhachHang.EditValue.ToString());
+            }
+            catch { hdObj.MAKH = 0; }
             dENgayLap.Text = DateTime.Now.ToString();
             hdObj = new HoaDon();
             hdObj.MAHD = DateTime.Now.ToString("yyyyMMddhhmmss");
             hdObj.NGAYLAP = DateTime.Parse(dENgayLap.Text.ToString());
             hdObj.MANV = nvObj.MANV;
-            hdObj.MAKH = int.Parse(luKhachHang.EditValue.ToString());
             hdObj.TONGTIEN = 0;
+            
+           
             hdBus.Insert(hdObj);
             hdObj = hdBus.GetNewHoaDon();
 
@@ -131,16 +137,13 @@ namespace SachApp
 
         private void btnTinhTien_Click(object sender, EventArgs e)
         {
+
             hdObj.TONGTIEN = decimal.Parse(dgvListHoaDon.Columns["THANHTIEN"].SummaryItem.SummaryValue.ToString());
             hdBus.Update(hdObj);
             gridListHoaDon.DataSource = null;
             KhoaDieuKhien();
         }
 
-        private void btnIn_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void label4_Click(object sender, EventArgs e)
         {

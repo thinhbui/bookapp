@@ -31,8 +31,19 @@ namespace SachApp
         {
             // TODO: This line of code loads data into the 'cuaHangSachDataSet.NhanVien' table. You can move, or remove it, as needed.
             //this.nhanVienTableAdapter.Fill(this.cuaHangSachDataSet.NhanVien);
+            loadNhanVien();
             showHD();
         }
+
+        private void loadNhanVien()
+        {
+            DataTable dt = nvBus.GetData();
+            lkNhanvien.Properties.DataSource = dt;
+            lkNhanvien.Properties.DisplayMember = "TENNV";
+            lkNhanvien.Properties.ValueMember = "MANV";
+            lkNhanvien.ItemIndex = dt.Rows.Count > 0 ? dt.Rows.Count - 1 : 1;
+        }
+
         void showHD()
         {
             gridControl1.DataSource = bus.GetDataHD();

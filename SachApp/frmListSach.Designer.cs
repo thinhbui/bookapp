@@ -221,6 +221,7 @@
             this.btnXoa.StyleController = this.layoutControl1;
             this.btnXoa.TabIndex = 5;
             this.btnXoa.Text = "Xóa";
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnThemMoi
             // 
