@@ -713,7 +713,6 @@
             this.btnIn.StyleController = this.layoutControl1;
             this.btnIn.TabIndex = 6;
             this.btnIn.Text = "In";
-            this.btnIn.Click += new System.EventHandler(this.btnIn_Click);
             // 
             // frmBanSach
             // 
