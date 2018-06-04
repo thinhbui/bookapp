@@ -45,7 +45,6 @@ namespace SachApp
             btnAddNPP.Enabled = false;
             btnThemMoi.Enabled = true;
             btnTinhTien.Enabled = false;
-            btnIn.Enabled = false;
             lkBook.Enabled = false;
             btnHuy.Enabled = false;
             spinQuanity.Enabled = false;
@@ -63,7 +62,6 @@ namespace SachApp
             btnAddNPP.Enabled = true;         
             btnThemMoi.Enabled = false;
             btnTinhTien.Enabled = true;
-            btnIn.Enabled = true;
             lkBook.Enabled = true;
             spinQuanity.Enabled = true;
             btnNhap.Enabled = true;
@@ -271,6 +269,11 @@ namespace SachApp
         private void lkBook_EditValueChanged(object sender, EventArgs e)
         {
             sach = sachBus.GetSachByID(int.Parse(lkBook.EditValue.ToString()));
+        }
+
+        private void gridChiTietPhieuNhap_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
