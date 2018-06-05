@@ -63,7 +63,7 @@
             this.simpleLabelItem1 = new DevExpress.XtraLayout.SimpleLabelItem();
             this.simpleLabelItem2 = new DevExpress.XtraLayout.SimpleLabelItem();
             this.txtTT = new DevExpress.XtraLayout.SimpleLabelItem();
-            this.txtTS = new DevExpress.XtraLayout.SimpleLabelItem();
+            this.lbTenSach = new DevExpress.XtraLayout.SimpleLabelItem();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem12 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -94,7 +94,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.simpleLabelItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.simpleLabelItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTT)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtTS)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lbTenSach)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).BeginInit();
@@ -150,14 +150,14 @@
             // 
             // luNPP
             // 
-            this.luNPP.Location = new System.Drawing.Point(100, 86);
+            this.luNPP.Location = new System.Drawing.Point(84, 86);
             this.luNPP.Name = "luNPP";
             this.luNPP.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.luNPP.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("TENNPP", "Nhà phân phối")});
             this.luNPP.Properties.NullText = "";
-            this.luNPP.Size = new System.Drawing.Size(196, 20);
+            this.luNPP.Size = new System.Drawing.Size(212, 20);
             this.luNPP.StyleController = this.layoutControl1;
             this.luNPP.TabIndex = 19;
             this.luNPP.EditValueChanged += new System.EventHandler(this.luNPP_EditValueChanged);
@@ -171,6 +171,7 @@
             this.gridChiTietPhieuNhap.TabIndex = 18;
             this.gridChiTietPhieuNhap.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dgvPhieuNhap});
+            this.gridChiTietPhieuNhap.FocusedViewChanged += new DevExpress.XtraGrid.ViewFocusEventHandler(this.gridChiTietPhieuNhap_FocusedViewChanged);
             this.gridChiTietPhieuNhap.Click += new System.EventHandler(this.gridChiTietPhieuNhap_Click);
             // 
             // dgvPhieuNhap
@@ -255,23 +256,23 @@
             // 
             // txtTenNv
             // 
-            this.txtTenNv.Location = new System.Drawing.Point(100, 38);
+            this.txtTenNv.Location = new System.Drawing.Point(84, 38);
             this.txtTenNv.Name = "txtTenNv";
-            this.txtTenNv.Size = new System.Drawing.Size(369, 20);
+            this.txtTenNv.Size = new System.Drawing.Size(385, 20);
             this.txtTenNv.StyleController = this.layoutControl1;
             this.txtTenNv.TabIndex = 9;
             // 
             // dEditNgayLap
             // 
             this.dEditNgayLap.EditValue = null;
-            this.dEditNgayLap.Location = new System.Drawing.Point(100, 62);
+            this.dEditNgayLap.Location = new System.Drawing.Point(84, 62);
             this.dEditNgayLap.Name = "dEditNgayLap";
             this.dEditNgayLap.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dEditNgayLap.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dEditNgayLap.Properties.CalendarTimeProperties.DisplayFormat.FormatString = "ddMMyyyy hhmmss";
-            this.dEditNgayLap.Size = new System.Drawing.Size(369, 20);
+            this.dEditNgayLap.Size = new System.Drawing.Size(385, 20);
             this.dEditNgayLap.StyleController = this.layoutControl1;
             this.dEditNgayLap.TabIndex = 8;
             // 
@@ -315,7 +316,7 @@
             0,
             0,
             0});
-            this.spinQuanity.Location = new System.Drawing.Point(100, 138);
+            this.spinQuanity.Location = new System.Drawing.Point(84, 138);
             this.spinQuanity.Name = "spinQuanity";
             this.spinQuanity.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -331,20 +332,20 @@
             0,
             0,
             0});
-            this.spinQuanity.Size = new System.Drawing.Size(196, 20);
+            this.spinQuanity.Size = new System.Drawing.Size(212, 20);
             this.spinQuanity.StyleController = this.layoutControl1;
             this.spinQuanity.TabIndex = 21;
             // 
             // lkBook
             // 
-            this.lkBook.Location = new System.Drawing.Point(100, 112);
+            this.lkBook.Location = new System.Drawing.Point(84, 112);
             this.lkBook.Name = "lkBook";
             this.lkBook.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.lkBook.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("TENSACH", "Sách")});
             this.lkBook.Properties.NullText = "";
-            this.lkBook.Size = new System.Drawing.Size(196, 20);
+            this.lkBook.Size = new System.Drawing.Size(212, 20);
             this.lkBook.StyleController = this.layoutControl1;
             this.lkBook.TabIndex = 20;
             this.lkBook.EditValueChanged += new System.EventHandler(this.lkBook_EditValueChanged);
@@ -367,7 +368,7 @@
             this.simpleLabelItem1,
             this.simpleLabelItem2,
             this.txtTT,
-            this.txtTS,
+            this.lbTenSach,
             this.layoutControlItem8,
             this.layoutControlItem10,
             this.layoutControlItem12,
@@ -418,7 +419,7 @@
             this.layoutControlItem5.Name = "layoutControlItem5";
             this.layoutControlItem5.Size = new System.Drawing.Size(461, 24);
             this.layoutControlItem5.Text = "Ngày lập";
-            this.layoutControlItem5.TextSize = new System.Drawing.Size(85, 13);
+            this.layoutControlItem5.TextSize = new System.Drawing.Size(69, 13);
             // 
             // layoutControlItem6
             // 
@@ -427,7 +428,7 @@
             this.layoutControlItem6.Name = "layoutControlItem6";
             this.layoutControlItem6.Size = new System.Drawing.Size(461, 24);
             this.layoutControlItem6.Text = "Tên nhân viên";
-            this.layoutControlItem6.TextSize = new System.Drawing.Size(85, 13);
+            this.layoutControlItem6.TextSize = new System.Drawing.Size(69, 13);
             // 
             // layoutControlItem9
             // 
@@ -463,7 +464,7 @@
             this.layoutControlItem4.Name = "layoutControlItem4";
             this.layoutControlItem4.Size = new System.Drawing.Size(288, 26);
             this.layoutControlItem4.Text = "Nhà phân phối";
-            this.layoutControlItem4.TextSize = new System.Drawing.Size(85, 13);
+            this.layoutControlItem4.TextSize = new System.Drawing.Size(69, 13);
             // 
             // simpleLabelItem1
             // 
@@ -474,7 +475,7 @@
             this.simpleLabelItem1.Name = "simpleLabelItem1";
             this.simpleLabelItem1.Size = new System.Drawing.Size(111, 23);
             this.simpleLabelItem1.Text = "Tên sách";
-            this.simpleLabelItem1.TextSize = new System.Drawing.Size(85, 19);
+            this.simpleLabelItem1.TextSize = new System.Drawing.Size(69, 19);
             // 
             // simpleLabelItem2
             // 
@@ -485,7 +486,7 @@
             this.simpleLabelItem2.Name = "simpleLabelItem2";
             this.simpleLabelItem2.Size = new System.Drawing.Size(111, 28);
             this.simpleLabelItem2.Text = "Tổng tiền";
-            this.simpleLabelItem2.TextSize = new System.Drawing.Size(85, 24);
+            this.simpleLabelItem2.TextSize = new System.Drawing.Size(69, 13);
             // 
             // txtTT
             // 
@@ -498,22 +499,22 @@
             this.txtTT.Name = "txtTT";
             this.txtTT.Size = new System.Drawing.Size(326, 28);
             this.txtTT.Text = "_____";
-            this.txtTT.TextSize = new System.Drawing.Size(85, 24);
+            this.txtTT.TextSize = new System.Drawing.Size(69, 24);
             this.txtTT.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.OnlyInRuntime;
             // 
-            // txtTS
+            // lbTenSach
             // 
-            this.txtTS.AllowHotTrack = false;
-            this.txtTS.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.txtTS.AppearanceItemCaption.ForeColor = System.Drawing.Color.LimeGreen;
-            this.txtTS.AppearanceItemCaption.Options.UseFont = true;
-            this.txtTS.AppearanceItemCaption.Options.UseForeColor = true;
-            this.txtTS.Location = new System.Drawing.Point(572, 26);
-            this.txtTS.Name = "txtTS";
-            this.txtTS.Size = new System.Drawing.Size(326, 23);
-            this.txtTS.Text = "______";
-            this.txtTS.TextSize = new System.Drawing.Size(85, 19);
-            this.txtTS.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.OnlyInRuntime;
+            this.lbTenSach.AllowHotTrack = false;
+            this.lbTenSach.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.lbTenSach.AppearanceItemCaption.ForeColor = System.Drawing.Color.LimeGreen;
+            this.lbTenSach.AppearanceItemCaption.Options.UseFont = true;
+            this.lbTenSach.AppearanceItemCaption.Options.UseForeColor = true;
+            this.lbTenSach.Location = new System.Drawing.Point(572, 26);
+            this.lbTenSach.Name = "lbTenSach";
+            this.lbTenSach.Size = new System.Drawing.Size(326, 23);
+            this.lbTenSach.Text = "______";
+            this.lbTenSach.TextSize = new System.Drawing.Size(69, 19);
+            this.lbTenSach.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.OnlyInRuntime;
             // 
             // layoutControlItem8
             // 
@@ -522,7 +523,7 @@
             this.layoutControlItem8.Name = "layoutControlItem8";
             this.layoutControlItem8.Size = new System.Drawing.Size(288, 26);
             this.layoutControlItem8.Text = "Sách";
-            this.layoutControlItem8.TextSize = new System.Drawing.Size(85, 13);
+            this.layoutControlItem8.TextSize = new System.Drawing.Size(69, 13);
             // 
             // layoutControlItem10
             // 
@@ -531,7 +532,7 @@
             this.layoutControlItem10.Name = "layoutControlItem10";
             this.layoutControlItem10.Size = new System.Drawing.Size(288, 26);
             this.layoutControlItem10.Text = "Số lượng";
-            this.layoutControlItem10.TextSize = new System.Drawing.Size(85, 13);
+            this.layoutControlItem10.TextSize = new System.Drawing.Size(69, 13);
             // 
             // layoutControlItem12
             // 
@@ -600,7 +601,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.simpleLabelItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.simpleLabelItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTT)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtTS)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lbTenSach)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).EndInit();
@@ -642,7 +643,7 @@
         private DevExpress.XtraLayout.SimpleLabelItem simpleLabelItem1;
         private DevExpress.XtraLayout.SimpleLabelItem simpleLabelItem2;
         private DevExpress.XtraLayout.SimpleLabelItem txtTT;
-        private DevExpress.XtraLayout.SimpleLabelItem txtTS;
+        private DevExpress.XtraLayout.SimpleLabelItem lbTenSach;
         private DevExpress.XtraLayout.SimpleLabelItem txtTongTien;
         private DevExpress.XtraLayout.SimpleLabelItem txtTenSach;
         private DevExpress.XtraEditors.SpinEdit spinQuanity;

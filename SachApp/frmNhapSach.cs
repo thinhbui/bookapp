@@ -71,7 +71,7 @@ namespace SachApp
 
         void XoaText()
         {
-            txtTS.Text = "_____";
+            lbTenSach.Text = "_____";
             txtTT.Text = "_____";
             dEditNgayLap.Text = string.Empty;
 
@@ -105,7 +105,7 @@ namespace SachApp
             dtCTPN = ctpnBus.GetData(pnObj.MAPN);
             gridChiTietPhieuNhap.DataSource = dtCTPN;
             gridChiTietPhieuNhap.ForceInitialize();
-            if(tenSach!= null) txtTS.Text = tenSach;
+            if(tenSach!= null) lbTenSach.Text = tenSach;
             try
             {
                 txtTT.Text = dgvPhieuNhap.Columns["THANHTIEN"].SummaryItem.SummaryValue.ToString();
@@ -274,6 +274,16 @@ namespace SachApp
         private void gridChiTietPhieuNhap_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void gridChiTietPhieuNhap_FocusedViewChanged(object sender, DevExpress.XtraGrid.ViewFocusEventArgs e)
+        {
+            try
+            {
+                //lbTenSach.Text = dgvListSach.GetFocusedDataRow()["TENSACH"].ToString();
+                //lbDonGia.Text = dgvListSach.GetFocusedDataRow()["GIABAN"].ToString();
+            }
+            catch { }
         }
     }
 }

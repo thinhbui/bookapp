@@ -43,7 +43,7 @@ namespace SachApp
             lkNhanvien.Properties.ValueMember = "MANV";
             lkNhanvien.ItemIndex = dt.Rows.Count > 0 ? dt.Rows.Count - 1 : 1;
         }
-
+        
         void showHD()
         {
             gridControl1.DataSource = bus.GetDataHD();
