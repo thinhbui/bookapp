@@ -47,7 +47,7 @@ namespace SachApp
         }
         void openControl()
         {
-            txtMa.Enabled = true;
+            txtMa.Enabled = false;
             txtEmail.Enabled = true;
             txtDiaChi.Enabled = true;
             txtDienThoai.Enabled = true;
@@ -95,6 +95,7 @@ namespace SachApp
 
         private void btnThem_Click(object sender, EventArgs e)
         {
+            clearText();
             isThem = true;
             openControl();
             txtMatKhau.Enabled = true;
@@ -115,6 +116,19 @@ namespace SachApp
                 show();
             }
             catch { }
+
+        }
+        private void clearText()
+        {
+            txtTen.Text = "";
+            txtDiaChi.Text = "";
+            txtEmail.Text = "";
+            txtDienThoai.Text = "";
+            txtNgaySinh.Text = "";
+            txtTaiKhoan.Text = "";
+            cbGT.Text = "";
+            deNgaySinh.Text = "";
+            txtMatKhau.Text = "";
 
         }
         private void btnLuu_Click(object sender, EventArgs e)
@@ -140,8 +154,6 @@ namespace SachApp
                     obj.EMAIL = txtEmail.Text;
                 if (lkQuyen.EditValue.ToString() != "")
                     obj.MAQUYEN = int.Parse(lkQuyen.EditValue.ToString());
-
-
             }
             catch { }
             //obj.NGAYSINH = Convert.ToDateTime(DateTime.ParseExact(deNgaySinh.EditValue.ToString(), "dd/MM/yyyy", new CultureInfo("fr-FR")).ToString("yyyy/MM/dd"));

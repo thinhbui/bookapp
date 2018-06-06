@@ -37,7 +37,10 @@ namespace SachApp.Service.BLL
             return dao.GetData();
         }
 
-
+        public DataTable GetPN()
+        {
+            return dao.GetPN();
+        }
         public int Insert(PhieuNhap obj)
         {
             return dao.Insert(obj);

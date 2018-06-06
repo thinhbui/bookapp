@@ -117,13 +117,14 @@ namespace SachApp
         private void btnThemMoi_Click(object sender, EventArgs e)
         {
             MoKhoaDieuKhien();
+
+            dENgayLap.Text = DateTime.Now.ToString();
+            hdObj = new HoaDon();
             try
             {
                 hdObj.MAKH = int.Parse(luKhachHang.EditValue.ToString());
             }
             catch { hdObj.MAKH = 0; }
-            dENgayLap.Text = DateTime.Now.ToString();
-            hdObj = new HoaDon();
             hdObj.MAHD = DateTime.Now.ToString("yyyyMMddhhmmss");
             hdObj.NGAYLAP = DateTime.Parse(dENgayLap.Text.ToString());
             hdObj.MANV = nvObj.MANV;
@@ -178,22 +179,27 @@ namespace SachApp
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            int soluong = int.Parse(spSoLuong.Text);
-            ChiTietHoaDon cthdObj = new ChiTietHoaDon();
-            cthdObj.MAHD = hdObj.MAHD;
-            cthdObj.MASACH = int.Parse(dgvListSach.GetFocusedDataRow()["MASACH"].ToString());
-            cthdObj.GIASACH = decimal.Parse(dgvListSach.GetFocusedDataRow()["GIABAN"].ToString());
-            cthdObj.SOLUONG = soluong;
-            cthdObj.THANHTIEN = int.Parse(spSoLuong.Text) * decimal.Parse(dgvListSach.GetFocusedDataRow()["GIABAN"].ToString());
-            if (soluong > 0)
+            try
             {
-                cthdBus.Insert(cthdObj);
-                LoadHoaDon();
+                int soluong = int.Parse(spSoLuong.Text);
+                ChiTietHoaDon cthdObj = new ChiTietHoaDon();
+                cthdObj.MAHD = hdObj.MAHD;
+                cthdObj.MASACH = int.Parse(dgvListSach.GetFocusedDataRow()["MASACH"].ToString());
+                cthdObj.GIASACH = decimal.Parse(dgvListSach.GetFocusedDataRow()["GIABAN"].ToString());
+                cthdObj.SOLUONG = soluong;
+                cthdObj.THANHTIEN = int.Parse(spSoLuong.Text) * decimal.Parse(dgvListSach.GetFocusedDataRow()["GIABAN"].ToString());
+                if (soluong > 0)
+                {
+                    cthdBus.Insert(cthdObj);
+                    LoadHoaDon();
+                }
+                else
+                {
+                    XtraMessageBox.Show("Số lượng phải lớn hơn không", "Thông báo!");
+                }
             }
-            else
-            {
-                XtraMessageBox.Show("Số lượng phải lớn hơn không", "Thông báo!");
-            }
+            catch { }
+          
             
         }
 
@@ -213,20 +219,7 @@ namespace SachApp
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            ChiTietHoaDon cthdObj = new ChiTietHoaDon();
-            try
-            {
-                cthdObj.MAHD = hdObj.MAHD;
-                cthdObj.MASACH = int.Parse(dgvListHoaDon.GetFocusedDataRow()["MASACH"].ToString());
-                cthdObj.GIASACH = decimal.Parse(dgvListHoaDon.GetFocusedDataRow()["GIASACH"].ToString());
-                cthdObj.SOLUONG = int.Parse(spSoLuong.Text);
-                cthdObj.THANHTIEN = int.Parse(spSoLuong.Text) * decimal.Parse(dgvListHoaDon.GetFocusedDataRow()["GIASACH"].ToString());
-
-                cthdBus.Update(cthdObj);
-
-                LoadHoaDon();
-            }
-            catch { }
+           
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
@@ -268,7 +261,20 @@ namespace SachApp
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
+            ChiTietHoaDon cthdObj = new ChiTietHoaDon();
+            try
+            {
+                cthdObj.MAHD = hdObj.MAHD;
+                cthdObj.MASACH = int.Parse(dgvListHoaDon.GetFocusedDataRow()["MASACH"].ToString());
+                cthdObj.GIASACH = decimal.Parse(dgvListHoaDon.GetFocusedDataRow()["GIASACH"].ToString());
+                cthdObj.SOLUONG = int.Parse(spSoLuong.Text);
+                cthdObj.THANHTIEN = int.Parse(spSoLuong.Text) * decimal.Parse(dgvListHoaDon.GetFocusedDataRow()["GIASACH"].ToString());
 
+                cthdBus.Update(cthdObj);
+
+                LoadHoaDon();
+            }
+            catch { }
         }
     }
 }

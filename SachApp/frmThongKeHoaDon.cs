@@ -41,7 +41,8 @@ namespace SachApp
             lkNhanvien.Properties.DataSource = dt;
             lkNhanvien.Properties.DisplayMember = "TENNV";
             lkNhanvien.Properties.ValueMember = "MANV";
-            lkNhanvien.ItemIndex = dt.Rows.Count > 0 ? dt.Rows.Count - 1 : 1;
+          //  lkNhanvien.ItemIndex = dt.Rows.Count > 0 ? dt.Rows.Count - 1 : 1;
+         //   id = int.Parse(lkNhanvien.EditValue.ToString());
         }
         
         void showHD()
@@ -123,6 +124,11 @@ namespace SachApp
         private void deFrom_EditValueChanged_1(object sender, EventArgs e)
         {      
             showTk();
+        }
+
+        private void gridControl1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

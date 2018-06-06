@@ -219,7 +219,7 @@ namespace SachApp
                 //luNPP.ItemIndex = -1;
 
                 dEditNgayLap.Text = DateTime.Now.ToString();
-                pnObj.MAPN = DateTime.Now.ToString("yyyyMMddhhmmss");
+                pnObj.MAPN = DateTime.Now.ToString("yyMMddhhmm");
                 pnObj.NGAYLAP = DateTime.Parse(dEditNgayLap.Text.ToString());
                 pnObj.MANV = nvObj.MANV;
                 pnObj.MANPP = int.Parse(luNPP.EditValue.ToString());
@@ -232,16 +232,16 @@ namespace SachApp
 
         private void btnTinhTien_Click(object sender, EventArgs e)
         {
-            try
-            {
+            //try
+            //{
                 pnObj.TONGTIEN = int.Parse(txtTT.Text);
                 pnBus.Update(pnObj);
                 gridChiTietPhieuNhap.DataSource = null;
                 dgvPhieuNhap.Columns.Clear();
                 reportPhieuNhap rp = new reportPhieuNhap(pnObj.MAPN);
                 rp.ShowPreview();
-            }
-            catch { }
+            //}
+            //catch { }
             XoaText();
             KhoaDieuKhien();
         }

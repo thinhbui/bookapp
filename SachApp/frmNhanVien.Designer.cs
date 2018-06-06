@@ -147,10 +147,7 @@ namespace SachApp
             this.lkQuyen.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.lkQuyen.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("MAQUYEN", "Mã quyền", 72, DevExpress.Utils.FormatType.Numeric, "", true, DevExpress.Utils.HorzAlignment.Far),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("TENQUYEN", "Tên quyền", 63, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near)});
-            this.lkQuyen.Properties.DisplayMember = "TENQUYEN";
-            this.lkQuyen.Properties.ValueMember = "MAQUYEN";
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("TENQUYEN", "Quyền", 63, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near)});
             this.lkQuyen.Size = new System.Drawing.Size(280, 20);
             this.lkQuyen.StyleController = this.layoutControl1;
             this.lkQuyen.TabIndex = 31;

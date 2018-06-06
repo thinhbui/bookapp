@@ -33,7 +33,7 @@ namespace SachApp
 
         void showPN()
         {
-            gridControl1.DataSource = bus.GetData();
+            gridControl1.DataSource = bus.GetPN();
         }
 
         private void cbThongKe_SelectedIndexChanged(object sender, EventArgs e)
@@ -109,7 +109,6 @@ namespace SachApp
             lkNhanvien.Properties.DataSource = dt;
             lkNhanvien.Properties.DisplayMember = "TENNV";
             lkNhanvien.Properties.ValueMember = "MANV";
-            lkNhanvien.ItemIndex = dt.Rows.Count > 0 ? dt.Rows.Count - 1 : 1;
         }
 
         private void gridControl1_DoubleClick(object sender, EventArgs e)
@@ -126,34 +125,74 @@ namespace SachApp
 
         private void deTo_EditValueChanged(object sender, EventArgs e)
         {
-
+            showTk();
         }
 
         private void cbThongKe_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-            //if (cbThongKe.Text == "Tuần")
-            //{
-            //    deTo.Text = DateTime.Now.ToString("dd/MM/yyyy");
-            //    deFrom.Text = DateTime.Now.AddDays(-7).ToString("dd/MM/yyyy");
+            if (cbThongKe.Text == "Tuần")
+            {
+                deTo.Text = DateTime.Now.ToString("dd/MM/yyyy");
+                deFrom.Text = DateTime.Now.AddDays(-7).ToString("dd/MM/yyyy");
 
 
-            //}
-            //if (cbThongKe.Text == "Tháng")
-            //{
-            //    deTo.Text = DateTime.Now.ToString("dd/MM/yyyy");
-            //    deFrom.Text = DateTime.Now.AddMonths(-1).ToString("dd/MM/yyyy");
-            //}
-            //if (cbThongKe.Text == "Quý")
-            //{
-            //    deTo.Text = DateTime.Now.ToString("dd/MM/yyyy");
-            //    deFrom.Text = DateTime.Now.AddMonths(-3).ToString("dd/MM/yyyy");
-            //}
-            //if (cbThongKe.Text == "Năm")
-            //{
-            //    deTo.Text = DateTime.Now.ToString("dd/MM/yyyy");
-            //    deFrom.Text = DateTime.Now.AddYears(-1).ToString("dd/MM/yyyy");
-            //}
-            //showTk();
+            }
+            if (cbThongKe.Text == "Tháng")
+            {
+                deTo.Text = DateTime.Now.ToString("dd/MM/yyyy");
+                deFrom.Text = DateTime.Now.AddMonths(-1).ToString("dd/MM/yyyy");
+            }
+            if (cbThongKe.Text == "Quý")
+            {
+                deTo.Text = DateTime.Now.ToString("dd/MM/yyyy");
+                deFrom.Text = DateTime.Now.AddMonths(-3).ToString("dd/MM/yyyy");
+            }
+            if (cbThongKe.Text == "Năm")
+            {
+                deTo.Text = DateTime.Now.ToString("dd/MM/yyyy");
+                deFrom.Text = DateTime.Now.AddYears(-1).ToString("dd/MM/yyyy");
+            }
+            showTK();
+
+        }
+        void showTK()
+        {
+            try
+            {
+                time1 = DateTime.ParseExact(deFrom.EditValue.ToString(), "dd/MM/yyyy", CultureInfo.InvariantCulture).ToString("yyyy/MM/dd");
+                time2 = DateTime.ParseExact(deTo.EditValue.ToString(), "dd/MM/yyyy", CultureInfo.InvariantCulture).ToString("yyyy/MM/dd");
+            }
+            catch
+            {
+                try
+                {
+                    time1 = Convert.ToDateTime(Convert.ToDateTime(deFrom.EditValue.ToString()).ToString("yyyy/MM/dd")).ToString("yyyy/MM/dd");
+                    time2 = Convert.ToDateTime(Convert.ToDateTime(deTo.EditValue.ToString()).ToString("yyyy/MM/dd")).ToString("yyyy/MM/dd");
+                }
+                catch { }
+            }
+
+            try
+            {
+                gridControl1.DataSource = bus.ThongKePhieuNhap(id, time1, time2);
+            }
+            catch { }
+        }
+        private void gridControl1_DoubleClick_1(object sender, EventArgs e)
+        {
+            string id = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, gridView1.Columns[0]).ToString();
+            frmChiTietPhieuNhap frm = new frmChiTietPhieuNhap(id);
+            frm.Show();
+        }
+
+        private void lkNhanvien_EditValueChanged_1(object sender, EventArgs e)
+        {
+            try
+            {
+                id = int.Parse(lkNhanvien.EditValue.ToString());
+            }
+            catch { }
+            showTk();
         }
     }
 }

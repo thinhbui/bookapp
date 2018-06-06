@@ -37,6 +37,7 @@ namespace SachApp.Service.Models
             cmd.Connection = conn;
             SqlDataAdapter da = new SqlDataAdapter();
             da.SelectCommand = cmd;
+            if(conn.State != ConnectionState.Open)
             conn.Open();
             da.Fill(dt);
             conn.Close();

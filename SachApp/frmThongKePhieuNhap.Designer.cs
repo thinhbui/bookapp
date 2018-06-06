@@ -33,6 +33,7 @@
             this.deFrom = new DevExpress.XtraEditors.DateEdit();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -122,46 +123,61 @@
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             this.gridControl1.Click += new System.EventHandler(this.gridControl1_Click);
+            this.gridControl1.DoubleClick += new System.EventHandler(this.gridControl1_DoubleClick_1);
             // 
             // gridView1
             // 
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn5,
             this.gridColumn1,
             this.gridColumn2,
             this.gridColumn3,
             this.gridColumn4});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsBehavior.Editable = false;
+            // 
+            // gridColumn5
+            // 
+            this.gridColumn5.Caption = "Mã phiếu nhập";
+            this.gridColumn5.FieldName = "MAPN";
+            this.gridColumn5.Name = "gridColumn5";
+            this.gridColumn5.Visible = true;
+            this.gridColumn5.VisibleIndex = 0;
             // 
             // gridColumn1
             // 
             this.gridColumn1.Caption = "Tên nhân viên";
+            this.gridColumn1.FieldName = "TENNV";
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 0;
+            this.gridColumn1.VisibleIndex = 1;
             // 
             // gridColumn2
             // 
-            this.gridColumn2.Caption = "Tên khách hàng";
+            this.gridColumn2.Caption = "Nhà phân phối";
+            this.gridColumn2.FieldName = "TENNPP";
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 1;
+            this.gridColumn2.VisibleIndex = 2;
             // 
             // gridColumn3
             // 
             this.gridColumn3.Caption = "Ngày lập";
+            this.gridColumn3.FieldName = "NGAYLAP";
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 2;
+            this.gridColumn3.VisibleIndex = 3;
             // 
             // gridColumn4
             // 
             this.gridColumn4.Caption = "Thanh toán";
             this.gridColumn4.DisplayFormat.FormatString = "n0";
             this.gridColumn4.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
+            this.gridColumn4.FieldName = "TONGTIEN";
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 3;
+            this.gridColumn4.VisibleIndex = 4;
             // 
             // cbThongKe
             // 
@@ -190,6 +206,7 @@
             this.lkNhanvien.Size = new System.Drawing.Size(387, 20);
             this.lkNhanvien.StyleController = this.layoutControl1;
             this.lkNhanvien.TabIndex = 4;
+            this.lkNhanvien.EditValueChanged += new System.EventHandler(this.lkNhanvien_EditValueChanged_1);
             // 
             // layoutControlGroup1
             // 
@@ -300,5 +317,6 @@
         private DevExpress.XtraEditors.DateEdit deFrom;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
     }
 }

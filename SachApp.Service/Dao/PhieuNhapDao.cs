@@ -15,6 +15,10 @@ namespace SachApp.Service.Dao
         {
             return base.GetData("PHIEUNHAP_GETALL", null);
         }
+        public DataTable GetPN()
+        {
+            return base.GetData("PHIEUNHAP_SELECT_ALL", null);
+        }
         public DataTable GetDataByID(int MAPN)
         {
             SqlParameter[] para =
@@ -41,7 +45,7 @@ namespace SachApp.Service.Dao
         {
             SqlParameter[] para =
             {
-                new SqlParameter("MAPN",obj.MANV),
+                new SqlParameter("MAPN",obj.MAPN),
                 new SqlParameter("MANV",obj.MANV),
                 new SqlParameter("NGAYLAP",obj.NGAYLAP),
                 new SqlParameter("MANPP",obj.MANPP),

@@ -26,7 +26,7 @@ namespace SachApp
                 lbTongTien.Text = dt.Rows[0]["TONGTIEN"].ToString();
             }
 
-            this.Parameters["maPN"].Value = int.Parse(dt.Rows[0]["MAPN"].ToString());
+            this.Parameters["maPN"].Value = Int64.Parse(dt.Rows[0]["MAPN"].ToString());
             
             //lbDienThoai = 
         }
