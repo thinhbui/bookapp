@@ -24,13 +24,11 @@ namespace SachApp
         HoaDonBus bus = new HoaDonBus();
         NhanVienBus nvBus = new NhanVienBus();
         int id;
-        bool change =false;
+        bool change = false;
         string time1;
         string time2;
         private void frmThongKe_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'cuaHangSachDataSet.NhanVien' table. You can move, or remove it, as needed.
-            //this.nhanVienTableAdapter.Fill(this.cuaHangSachDataSet.NhanVien);
             loadNhanVien();
             showHD();
         }
@@ -41,10 +39,10 @@ namespace SachApp
             lkNhanvien.Properties.DataSource = dt;
             lkNhanvien.Properties.DisplayMember = "TENNV";
             lkNhanvien.Properties.ValueMember = "MANV";
-          //  lkNhanvien.ItemIndex = dt.Rows.Count > 0 ? dt.Rows.Count - 1 : 1;
-         //   id = int.Parse(lkNhanvien.EditValue.ToString());
+            //  lkNhanvien.ItemIndex = dt.Rows.Count > 0 ? dt.Rows.Count - 1 : 1;
+            //   id = int.Parse(lkNhanvien.EditValue.ToString());
         }
-        
+
         void showHD()
         {
             gridControl1.DataSource = bus.GetDataHD();
@@ -122,7 +120,7 @@ namespace SachApp
         }
 
         private void deFrom_EditValueChanged_1(object sender, EventArgs e)
-        {      
+        {
             showTk();
         }
 

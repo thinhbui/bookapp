@@ -81,7 +81,7 @@ namespace SachApp
 
             try
             {
-                // gridControl1.DataSource = bus.ThongKePhieuNhap(id, time1, time2);
+                 gridControl1.DataSource = bus.ThongKePhieuNhap(id, time1, time2);
             }
             catch { }
         }
@@ -152,32 +152,10 @@ namespace SachApp
                 deTo.Text = DateTime.Now.ToString("dd/MM/yyyy");
                 deFrom.Text = DateTime.Now.AddYears(-1).ToString("dd/MM/yyyy");
             }
-            showTK();
+            showTk();
 
         }
-        void showTK()
-        {
-            try
-            {
-                time1 = DateTime.ParseExact(deFrom.EditValue.ToString(), "dd/MM/yyyy", CultureInfo.InvariantCulture).ToString("yyyy/MM/dd");
-                time2 = DateTime.ParseExact(deTo.EditValue.ToString(), "dd/MM/yyyy", CultureInfo.InvariantCulture).ToString("yyyy/MM/dd");
-            }
-            catch
-            {
-                try
-                {
-                    time1 = Convert.ToDateTime(Convert.ToDateTime(deFrom.EditValue.ToString()).ToString("yyyy/MM/dd")).ToString("yyyy/MM/dd");
-                    time2 = Convert.ToDateTime(Convert.ToDateTime(deTo.EditValue.ToString()).ToString("yyyy/MM/dd")).ToString("yyyy/MM/dd");
-                }
-                catch { }
-            }
-
-            try
-            {
-                gridControl1.DataSource = bus.ThongKePhieuNhap(id, time1, time2);
-            }
-            catch { }
-        }
+  
         private void gridControl1_DoubleClick_1(object sender, EventArgs e)
         {
             string id = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, gridView1.Columns[0]).ToString();

@@ -40,11 +40,10 @@ namespace SachApp
 
             btnAddKhachHang.Enabled = false;
             btnTinhTien.Enabled = false;
-            btnIn.Enabled = false;
+            btnHuy.Enabled = false;
             btnThemMoi.Enabled = true;
 
             btnThem.Enabled = false;
-            btnSua.Enabled = false;
             btnLuu.Enabled = false;
             btnXoa.Enabled = false;
         }
@@ -57,11 +56,10 @@ namespace SachApp
 
             btnAddKhachHang.Enabled = true;
             btnTinhTien.Enabled = true;
-            btnIn.Enabled = true;
+            btnHuy.Enabled = true;
             btnThemMoi.Enabled = false;
 
             btnThem.Enabled = true;
-            btnSua.Enabled = true;
             btnLuu.Enabled = true;
             btnXoa.Enabled = true;
            
@@ -161,7 +159,6 @@ namespace SachApp
             //lbTenSach.Text=dgvListSach.GetRowCellValue(gridView1.FocusedRowHandle, gridView1.Columns[0]).ToString();
             //lbTenSach.Text = dgvListSach.GetRowCellValue(dgvListSach.FocusedRowHandle, dgvListSach.Columns["TENSACH"]).ToString();
             //lbDonGia.Text = dgvListSach.GetRowCellValue(dgvListSach.FocusedRowHandle, dgvListSach.Columns["GIABAN"]).ToString();
-            btnSua.Enabled = false;
             btnXoa.Enabled = false;
             btnThem.Enabled = true;
         }
@@ -255,7 +252,6 @@ namespace SachApp
         private void gridListHoaDon_Click(object sender, EventArgs e)
         {
             btnThem.Enabled = false;
-            btnSua.Enabled = true;
             btnXoa.Enabled = true;
         }
 
@@ -273,6 +269,17 @@ namespace SachApp
                 cthdBus.Update(cthdObj);
 
                 LoadHoaDon();
+            }
+            catch { }
+        }
+
+        private void btnHuy_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                hdBus.Delete(int.Parse(hdObj.MAHD));
+                dgvListHoaDon.Columns.Clear();
+                KhoaDieuKhien();
             }
             catch { }
         }
