@@ -109,8 +109,10 @@ namespace SachApp
         {
             if (nvObj.MAQUYEN == 2)
             {
-                //btnBanSach.Enabled = false;
-                //btnNhapSach.Enabled = false;
+                btnNhapSach.Enabled = false;
+                btnNhanVien.Enabled = false;
+                btnNPP.Enabled = false;
+
             }
         }
 
