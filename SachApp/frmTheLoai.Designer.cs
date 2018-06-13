@@ -32,6 +32,9 @@
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.gridControlTheLoai = new DevExpress.XtraGrid.GridControl();
             this.dgvTheLoai = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnLuu = new DevExpress.XtraEditors.SimpleButton();
             this.btnSua = new DevExpress.XtraEditors.SimpleButton();
             this.btnXoa = new DevExpress.XtraEditors.SimpleButton();
@@ -46,9 +49,6 @@
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlTheLoai)).BeginInit();
@@ -103,6 +103,28 @@
             this.dgvTheLoai.GridControl = this.gridControlTheLoai;
             this.dgvTheLoai.Name = "dgvTheLoai";
             this.dgvTheLoai.OptionsBehavior.Editable = false;
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "Mã thể loại";
+            this.gridColumn1.FieldName = "MATHELOAI";
+            this.gridColumn1.Name = "gridColumn1";
+            // 
+            // gridColumn2
+            // 
+            this.gridColumn2.Caption = "Tên thể loại";
+            this.gridColumn2.FieldName = "TENTHELOAI";
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 0;
+            // 
+            // gridColumn3
+            // 
+            this.gridColumn3.Caption = "Mô tả";
+            this.gridColumn3.FieldName = "MOTA";
+            this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.Visible = true;
+            this.gridColumn3.VisibleIndex = 1;
             // 
             // btnLuu
             // 
@@ -243,28 +265,6 @@
             this.layoutControlItem8.Size = new System.Drawing.Size(651, 294);
             this.layoutControlItem8.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem8.TextVisible = false;
-            // 
-            // gridColumn1
-            // 
-            this.gridColumn1.Caption = "Mã thể loại";
-            this.gridColumn1.FieldName = "MATHELOAI";
-            this.gridColumn1.Name = "gridColumn1";
-            // 
-            // gridColumn2
-            // 
-            this.gridColumn2.Caption = "Tên thể loại";
-            this.gridColumn2.FieldName = "TENTHELOAI";
-            this.gridColumn2.Name = "gridColumn2";
-            this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 0;
-            // 
-            // gridColumn3
-            // 
-            this.gridColumn3.Caption = "Mô tả";
-            this.gridColumn3.FieldName = "MOTA";
-            this.gridColumn3.Name = "gridColumn3";
-            this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 1;
             // 
             // frmTheLoai
             // 

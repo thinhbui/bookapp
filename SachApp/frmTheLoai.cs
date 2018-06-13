@@ -80,7 +80,7 @@ namespace SachApp
             {
                 try
                 {
-                    theloaiBus.Delete(int.Parse(dgvTheLoai.GetRowCellValue(dgvTheLoai.FocusedRowHandle, dgvTheLoai.Columns[1]).ToString()));
+                    theloaiBus.Delete(int.Parse(dgvTheLoai.GetRowCellValue(dgvTheLoai.FocusedRowHandle, dgvTheLoai.Columns[0]).ToString()));
                     XtraMessageBox.Show("Đã xóa thành công");
                     XoaText();
                     KhoaDieuKhien();
